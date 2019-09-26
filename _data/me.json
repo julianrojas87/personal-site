@@ -1,0 +1,244 @@
+{
+    "@context": {
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "foaf": "http://xmlns.com/foaf/0.1/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "schema": "http://schema.org/",
+        "wd": "http://www.wikidata.org/entity/",
+        "wdt": "http://www.wikidata.org/prop/direct/",
+        "gn": "http://sws.geonames.org/",
+        "label": "rdfs:label",
+        "description": "rdfs:description",
+        "orcidId": {
+            "@id": "wdt:P496",
+            "@type": "@id"
+        },
+        "Document": "foaf:Document",
+        "maker": {
+            "@id": "foaf:maker",
+            "@type": "@id"
+        },
+        "primaryTopic": {
+            "@id": "foaf:primaryTopic",
+            "@type": "@id"
+        },
+        "name": "foaf:name",
+        "givenName": "foaf:givenName",
+        "familyName": "foaf:familyName",
+        "email": "foaf:mbox",
+        "gender": "foaf:gender",
+        "homepage": "foaf:homepage",
+        "birthday": "foaf:birthday",
+        "title": "foaf:title",
+        "img": "foaf:img",
+        "ScholarlyArticle": "schema:ScholarlyArticle",
+        "birthDate": "schema:birthDate",
+        "birthPlace": "schema:birthPlace",
+        "homeLocation": "schema:homeLocation",
+        "datePublished": "schema:datePublished",
+        "publisher": "schema:publisher",
+        "author": {
+            "@id": "schema:author",
+            "@type": "@id",
+            "@container": "@list"
+        },
+        "sameAs": {
+            "@id": "schema:sameAs",
+            "@type": "@id"
+        }
+    },
+    "@id": "https://julianrojas.org/",
+    "@type": "Document",
+    "label": [
+        {
+            "@value": "Julián Rojas's FOAF profile",
+            "@language": "en"
+        },
+        {
+            "@value": "Perfil FOAF de Julián Rojas",
+            "@language": "es"
+        }
+    ],
+    "maker": "https://julianrojas.org/#me",
+    "primaryTopic": "https://julianrojas.org/#me",
+    "@graph": [
+        {
+            "@id": "https://julianrojas.org/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Julián Rojas",
+            "name": "Julián Rojas",
+            "givenName": "Julián",
+            "familyName": "Rojas",
+            "description": "I am a Linked Open Data, Semantic Web and Transportation researcher at IDLab. A Colombian living in Belgium.",
+            "email": "julianandres.rojasmelendez@ugent.be",
+            "gender": [
+                {
+                    "@value": "male",
+                    "@language": "en"
+                },
+                {
+                    "@value": "masculino",
+                    "@language": "es"
+                }
+            ],
+            "orcidId": "http://orcid.org/0000-0002-6645-1264",
+            "homepage": "https://julianrojas.org/",
+            "birthday": "06-27",
+            "birthDate": "1987-06-27",
+            "birthPlace": {
+                "@id": "wd:Q335135",
+                "schema:name": "Popayán",
+                "sameAs": "gn:3671916"
+            },
+            "homeLocation": {
+                "@id": "wd:Q1296",
+                "schema:name": [
+                    {
+                        "@value": "Gent",
+                        "@language": "nl"
+                    },
+                    {
+                        "@value": "Ghent",
+                        "@language": "en"
+                    }
+                ],
+                "sameAs": "gn:2797656"
+            },
+            "title": "MSc.",
+            "img": "https://julianrojas.org/img/me.jpg"
+        },
+        {
+            "@id": "https://iswc2017.semanticweb.org/paper-637/",
+            "@type": "ScholarlyArticle",
+            "label": "Providing Reliable Access to Real-Time and Historic Public Transport Data Using Linked Connections",
+            "description": "Using Linked Data based approaches, public transport companies are able to share their time tables and its updates in an affordable way while allowing user agents to perform multimodal route planning algorithms. Providing time table updates, usually published as data streams, means that data is being constantly modified and if there is a large analytical query, its response might be affected due to the changing data. In this demo we introduce a mechanism to tackle this problem by guaranteeing that a user agent will always receive version based responses, therefore ensuring data consistency. Such mechanism also enables access to historical data that could be used for deep analysis of transport systems. However, how this data shall be archived, in order to keep this ap- proach scalable and inexpensive is still a matter of study. In a demonstrator, we published and query data from the Belgium national train system (SNCB) and Madrid Regional Transport Consortium (CRTM). This paper represents the first step towards establishing an affordable framework to publish reliable transport data.",
+            "datePublished": "2017",
+            "publisher": "ISWC2017 - Poster and Demos",
+            "author": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/david_chaves",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me",
+                "https://data.verborgh.org/people/erik_mannens"
+            ],
+            "sameAs": [
+                "https://biblio.ugent.be/publication/8540883",
+                "https://ruben.verborgh.org/publications/rojas_iswc_demo_2017/#publication"
+            ]
+        },
+        {
+            "@id": "https://cef-oasis.github.io/tripscore/tripscore.html",
+            "@type": "ScholarlyArticle",
+            "label": "The tripscore Linked Data client: calculating specific summaries over large time series",
+            "description": "Time series – such as public transport time schedules and their actual departure times – may deliver insights about the public transport network to third parties. Today, however, public transport data is published in a way in which analytical processing is too expensive. In previous work, the Linked Connections(LC) framework was introduced as a cost-efficient publishing alternative to the de-facto GTFS standard and route planning APIs. We study whether this server interface can also be used by Linked Data agents to solve analytical queries over longer periods of time. In this work, we created a serverless Linked Data client in Javascript for the analysis of time series on top of public transport data sources, called tripscore.eu. In this example, it calculates the quality of experience for your journey for the last 5 weeks using the public transport agencies it can discover. We have made the code to this proof of concept available as open source in different reusable components. As the user-perceived performance is quite slow, we formulate opportunities to achieve better response times. We could, on the one hand, suggest the data publisher to publish summaries over longer periods of time. On the other hand, we could also, as reusers, create a private summary of the data on our server and expose this to our user agents. Still an open issue is how this client would discover new public transport agencies reliably, for which we started working on a metadata profile for transport datasets.",
+            "datePublished": "2017",
+            "publisher": "International Semantic Web Conference 2017 - Decentralizing the Semantic Web Workshop",
+            "author": [
+                "https://data.verborgh.org/people/david_chaves",
+                "https://julianrojas.org/#me",
+                "https://julianrojas.org/people/pieter-jan_vandenberghe",
+                "https://pietercolpaert.be/#me",
+                "https://data.verborgh.org/people/oscar_corcho"
+            ],
+            "sameAs": [
+                "http://oa.upm.es/50157/",
+                "https://openreview.net/forum?id=H16ZExYLb"
+            ]
+        },
+        {
+            "@id": "https://dl.acm.org/citation.cfm?id=3191650",
+            "@type": "ScholarlyArticle",
+            "label": "A Preliminary Open Data Publishing Strategy for Live Data in Flanders",
+            "description": "For smart decision making, user agents need live and historic access to open data from sensors installed in the public domain. In contrast to a closed environment, for Open Data and federated query processing algorithms, the data publisher cannot anticipate in advance on specific questions, nor can it deal with a bad cost-efficiency of the server interface when data consumers increase. When publishing observations from sensors, different fragmentation strategies can be thought of depending on how the historic data needs to be queried. Furthermore, both publish/subscribe and polling strategies exist to publish live updates. Each of these strategies come with their own trade-offs regarding cost-efficiency of the server-interface, user-perceived performance and cpu use. A polling strategy where multiple observations are published in a paged collection was tested in a proof of concept for parking spaces availability. In order to understand the different resource trade-offs presented by publish/subscribe and polling publication strategies, we devised an experiment on two machines, for a scalability test. The preliminary results were inconclusive and suggest more large scale tests are needed in order to see a trend. While the large-scale tests will be performed in future work, the proof of concept helped to identify the technical Open Data principles for the 13 biggest cities in Flanders.",
+            "datePublished": "2018",
+            "publisher": "The Web Conference 2018 - Web Stream Processing Workshop",
+            "author": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/brecht_van_de_vyvere",
+                "https://data.verborgh.org/people/arne_gevaert",
+                "http://www.rubensworks.net/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "sameAs": [
+                "https://biblio.ugent.be/publication/8560021",
+                "https://dx.doi.org/10.1145/3184558.3191650"
+            ]
+        },
+        {
+            "@id": "https://data.verborgh.org/people/david_chaves",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "David Chaves Fraga"
+        },
+        {
+            "@id": "https://pietercolpaert.be/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Pieter Colpaert"
+        },
+        {
+            "@id": "https://ruben.verborgh.org/profile/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Ruben Verborgh"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/erik_mannens",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Erik Mannens"
+        },
+        {
+            "@id": "https://julianrojas.org/people/pieter-jan_vandenberghe",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Pieter-Jan Vandenberghe"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/oscar_corcho",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Oscar Corcho"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/brecht_van_de_vyvere",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Brecht Van de Vyvere"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/arne_gevaert",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Arne Gevaert"
+        },
+        {
+            "@id": "http://www.rubensworks.net/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Ruben Taelman"
+        }
+    ]
+}
