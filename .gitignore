@@ -6,5 +6,6 @@ test.js
 public/css
 public/js
 public/icon-fonts
-public/img
+public/images
+public/fonts
 public/index.html

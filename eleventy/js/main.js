@@ -1,134 +1,200 @@
-'use strict';
-
-
-$(window).on('load', function () {
-	/*------------------
-		Preloder
-	--------------------*/
-	$(".loader").fadeOut();
-	$("#preloder").delay(400).fadeOut("slow");
-	removeExtraCommas();
-	collapseAbstracts();
+AOS.init({
+	duration: 800,
+	easing: 'slide'
 });
-
 
 (function ($) {
 
-	/*------------------
-		Background set
-	--------------------*/
-	$('.set-bg').each(function () {
-		var bg = $(this).data('setbg');
-		$(this).css('background-image', 'url(' + bg + ')');
+	"use strict";
+
+	$(window).stellar({
+		responsive: true,
+		parallaxBackgrounds: true,
+		parallaxElements: true,
+		horizontalScrolling: false,
+		hideDistantElements: false,
+		scrollProperty: 'scroll'
 	});
 
 
-	$('.review-slider').owlCarousel({
-		loop: true,
-		nav: false,
-		dots: true,
-		items: 1,
-		autoplay: true
-	});
+	var fullHeight = function () {
 
+		$('.js-fullheight').css('height', $(window).height());
+		$(window).resize(function () {
+			$('.js-fullheight').css('height', $(window).height());
+		});
 
+	};
+	fullHeight();
 
-	$('.progress-bar-style').each(function () {
-		var progress = $(this).data("progress");
-		var prog_width = progress + '%';
-		if (progress <= 100) {
-			$(this).append('<div class="bar-inner" style="width:' + prog_width + '"><span>' + prog_width + '</span></div>');
-		}
-		else {
-			$(this).append('<div class="bar-inner" style="width:100%"><span>' + prog_width + '</span></div>');
-		}
-	});
-
-
-	$('.lan-prog').each(function () {
-		var progress = $(this).data("lanprogesss");
-		var ele = '<span></span>';
-		var ele_fade = '<span class="fade-ele"></span>';
-
-		for (var i = 1; i <= 5; i++) {
-			if (i <= progress) {
-				$(this).append(ele);
-			} else {
-				$(this).append(ele_fade);
+	// loader
+	var loader = function () {
+		setTimeout(function () {
+			if ($('#ftco-loader').length > 0) {
+				$('#ftco-loader').removeClass('show');
 			}
+		}, 1);
+	};
+	loader();
+
+	// Scrollax
+	$.Scrollax();
+
+
+	var burgerMenu = function () {
+
+		$('.js-colorlib-nav-toggle').on('click', function (event) {
+			event.preventDefault();
+			var $this = $(this);
+
+			if ($('body').hasClass('offcanvas')) {
+				$this.removeClass('active');
+				$('body').removeClass('offcanvas');
+			} else {
+				$this.addClass('active');
+				$('body').addClass('offcanvas');
+			}
+		});
+	};
+	burgerMenu();
+
+	// Click outside of offcanvass
+	var mobileMenuOutsideClick = function () {
+
+		$(document).click(function (e) {
+			var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
+			if (!container.is(e.target) && container.has(e.target).length === 0) {
+
+				if ($('body').hasClass('offcanvas')) {
+
+					$('body').removeClass('offcanvas');
+					$('.js-colorlib-nav-toggle').removeClass('active');
+
+				}
+
+			}
+		});
+
+		$(window).scroll(function () {
+			if ($('body').hasClass('offcanvas')) {
+
+				$('body').removeClass('offcanvas');
+				$('.js-colorlib-nav-toggle').removeClass('active');
+
+			}
+		});
+
+	};
+	mobileMenuOutsideClick();
+
+	var carousel = function () {
+		$('.home-slider').owlCarousel({
+			loop: true,
+			autoplay: true,
+			margin: 0,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			nav: false,
+			autoplayHoverPause: false,
+			items: 1,
+			navText: ["<span class='ion-md-arrow-back'></span>", "<span class='ion-chevron-right'></span>"],
+			responsive: {
+				0: {
+					items: 1
+				},
+				600: {
+					items: 1
+				},
+				1000: {
+					items: 1
+				}
+			}
+		});
+
+	};
+	carousel();
+
+
+
+	var contentWayPoint = function () {
+		var i = 0;
+		$('.ftco-animate').waypoint(function (direction) {
+
+			if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
+
+				i++;
+
+				$(this.element).addClass('item-animate');
+				setTimeout(function () {
+
+					$('body .ftco-animate.item-animate').each(function (k) {
+						var el = $(this);
+						setTimeout(function () {
+							var effect = el.data('animate-effect');
+							if (effect === 'fadeIn') {
+								el.addClass('fadeIn ftco-animated');
+							} else if (effect === 'fadeInLeft') {
+								el.addClass('fadeInLeft ftco-animated');
+							} else if (effect === 'fadeInRight') {
+								el.addClass('fadeInRight ftco-animated');
+							} else {
+								el.addClass('fadeInUp ftco-animated');
+							}
+							el.removeClass('item-animate');
+						}, k * 50, 'easeInOutExpo');
+					});
+
+				}, 100);
+
+			}
+
+		}, { offset: '95%' });
+	};
+	contentWayPoint();
+
+
+	// magnific popup
+	$('.image-popup').magnificPopup({
+		type: 'image',
+		closeOnContentClick: true,
+		closeBtnInside: false,
+		fixedContentPos: true,
+		mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+		gallery: {
+			enabled: true,
+			navigateByImgClick: true,
+			preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+		},
+		image: {
+			verticalFit: true
+		},
+		zoom: {
+			enabled: true,
+			duration: 300 // don't foget to change the duration also in CSS
 		}
 	});
 
+	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+		disableOn: 700,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
 
-	/*------------------
-		Popup
-	--------------------*/
-	$('.portfolio-item .port-pic').magnificPopup({
-		type: 'image',
-		mainClass: 'img-popup-warp',
-		removalDelay: 500,
+		fixedContentPos: false
 	});
 
-
-
-
-	if ($().circleProgress) {
-
-		//Set progress circle 1
-		$("#progress1").circleProgress({
-			value: 0.75,
-			size: 175,
-			thickness: 2,
-			fill: "#40424a",
-			emptyFill: "rgba(0, 0, 0, 0)"
-		});
-		//Set progress circle 2
-		$("#progress2").circleProgress({
-			value: 0.83,
-			size: 175,
-			thickness: 2,
-			fill: "#40424a",
-			emptyFill: "rgba(0, 0, 0, 0)"
-		});
-
-		//Set progress circle white
-		$("#progress3").circleProgress({
-			value: 0.75,
-			size: 175,
-			thickness: 2,
-			fill: "#ffffff",
-			emptyFill: "rgba(0, 0, 0, 0)"
-		});
-
-		//Set progress circle white
-		$("#progress4").circleProgress({
-			value: 0.83,
-			size: 175,
-			thickness: 2,
-			fill: "#ffffff",
-			emptyFill: "rgba(0, 0, 0, 0)"
-		});
-
-		//Set progress circle skyblue
-		$("#progress5").circleProgress({
-			value: 0.75,
-			size: 175,
-			thickness: 2,
-			fill: "#009fff",
-			emptyFill: "rgba(0, 0, 0, 0)"
-		});
-
-		//Set progress circle skyblue
-		$("#progress6").circleProgress({
-			value: 0.83,
-			size: 175,
-			thickness: 2,
-			fill: "#009fff",
-			emptyFill: "rgba(0, 0, 0, 0)"
-		});
-	}
+	$('#colorlib-main-menu a').click(function() {
+		$(this).parent().siblings('.colorlib-active').removeClass('colorlib-active');
+		$(this).parent().addClass('colorlib-active');
+	});
 
 })(jQuery);
+
+$(window).on('load', function () {
+	removeExtraCommas();
+	collapseAbstracts();
+});
 
 function removeExtraCommas() {
 	let authors = $('.timeline h5');
