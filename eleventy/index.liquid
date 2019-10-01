@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Julián Rojas</title>
+	<title>{{ foaf.name }}</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Favicon -->
@@ -39,7 +39,7 @@
 			<div class="row">
 				<div class="col-md-4">
 					<div class="site-logo">
-						<a href="#" class="site-btn home">Julián Rojas</a>
+						<a href="#" class="site-btn home">{{ foaf.name }}</a>
 					</div>
 				</div>
 				<div class="col-md-8 text-md-right header-buttons">
@@ -61,7 +61,7 @@
 					<div class="row">
 						<div class="col-lg-6">
 							<div class="hero-text">
-								<h2>Julián Rojas</h2>
+								<h2>{{ foaf.name }}</h2>
 								<p>
 									I’m a Linked Open Data, Semantic Web and Transportation researcher at <a
 										href="http://idlab.technology/" target="_blank">IDLab</a>.
@@ -73,17 +73,17 @@
 							<div class="hero-info">
 								<h2>General Info</h2>
 								<ul>
-									<li><span>Date of Birth</span>June 27th, 1987</li>
+									<li><span>Date of Birth</span>{{ foaf.birthDate }}</li>
 									<li style="width: 121%;"><span class="long-email">E-mail</span><a
-											href="mailto:julianandres.rojasmelendez@ugent.be">julianandres.rojasmelendez@ugent.be</a>
+											href="mailto:{{ foaf.email }}">{{ foaf.email }}</a>
 									</li>
-									<li><span>Phone </span>+32 9 331 49 59</li>
+									<li><span>Phone </span>{{ foaf.phone }}</li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<figure class="hero-image">
-								<img src="https://julianrojas.org/img/me.jpg" alt="Julián Rojas">
+								<img src="{{ foaf.img }}" alt="{{ foaf.name }}">
 							</figure>
 						</div>
 					</div>
@@ -94,13 +94,9 @@
 								<div class="col-xl-10 offset-xl-1">
 									<div class="social-link-warp">
 										<div class="social-links">
-											
-											<a href="https://github.com/julianrojas87" target="_blank"><i class="fa fa-github"></i></a>
-											
-											<a href="https://www.linkedin.com/in/julianrojas87/" target="_blank"><i class="fa fa-linkedin"></i></a>
-											
-											<a href="https://twitter.com/julianr1987" target="_blank"><i class="fa fa-twitter"></i></a>
-											
+											{% for acc in foaf.account %}
+											<a href="{{ acc.id }}" target="_blank"><i class="fa fa-{{ acc.provider }}"></i></a>
+											{% endfor %}
 										</div>
 									</div>
 								</div>
@@ -122,66 +118,18 @@
 						<h2>Publications</h2>
 					</div>
 					<ul class="resume-list">
-						
+						{% for pub in publications %}
 						<li>
-							<h2>2018</h2>
-							<h3><a href="https://dl.acm.org/citation.cfm?id=3191650" target="_blank">A Preliminary Open Data Publishing Strategy for Live Data in Flanders</a></h3>
-							<h5> 
-								<a style="color: indianred;" href="https://julianrojas.org/#me" target="_blank"><span>Julián Rojas</span></a>,
-								 
-								<a style="color: indianred;" href="https://data.verborgh.org/people/brecht_van_de_vyvere" target="_blank"><span>Brecht Van de Vyvere</span></a>,
-								 
-								<a style="color: indianred;" href="https://data.verborgh.org/people/arne_gevaert" target="_blank"><span>Arne Gevaert</span></a>,
-								 
-								<a style="color: indianred;" href="http://www.rubensworks.net/#me" target="_blank"><span>Ruben Taelman</span></a>,
-								 
-								<a style="color: indianred;" href="https://pietercolpaert.be/#me" target="_blank"><span>Pieter Colpaert</span></a>,
-								 
-								<a style="color: indianred;" href="https://ruben.verborgh.org/profile/#me" target="_blank"><span>Ruben Verborgh</span></a>,
-								
+							<h2>{{ pub.datePublished }}</h2>
+							<h3><a href="{{ pub.id }}" target="_blank">{{ pub.title }}</a></h3>
+							<h5>{% for auth in pub.authors %} 
+								<a style="color: indianred;" href="{{ auth.id }}" target="_blank"><span>{{ auth.name }}</span></a>,
+								{% endfor %}
 							</h5>
-							<h4>The Web Conference 2018 - Web Stream Processing Workshop</h4>
-							<p>For smart decision making, user agents need live and historic access to open data from sensors installed in the public domain. In contrast to a closed environment, for Open Data and federated query processing algorithms, the data publisher cannot anticipate in advance on specific questions, nor can it deal with a bad cost-efficiency of the server interface when data consumers increase. When publishing observations from sensors, different fragmentation strategies can be thought of depending on how the historic data needs to be queried. Furthermore, both publish/subscribe and polling strategies exist to publish live updates. Each of these strategies come with their own trade-offs regarding cost-efficiency of the server-interface, user-perceived performance and cpu use. A polling strategy where multiple observations are published in a paged collection was tested in a proof of concept for parking spaces availability. In order to understand the different resource trade-offs presented by publish/subscribe and polling publication strategies, we devised an experiment on two machines, for a scalability test. The preliminary results were inconclusive and suggest more large scale tests are needed in order to see a trend. While the large-scale tests will be performed in future work, the proof of concept helped to identify the technical Open Data principles for the 13 biggest cities in Flanders.</p>
+							<h4>{{ pub.publisher }}</h4>
+							<p>{{ pub.abstract }}</p>
 						</li>
-						
-						<li>
-							<h2>2017</h2>
-							<h3><a href="https://iswc2017.semanticweb.org/paper-637/" target="_blank">Providing Reliable Access to Real-Time and Historic Public Transport Data Using Linked Connections</a></h3>
-							<h5> 
-								<a style="color: indianred;" href="https://julianrojas.org/#me" target="_blank"><span>Julián Rojas</span></a>,
-								 
-								<a style="color: indianred;" href="https://data.verborgh.org/people/david_chaves" target="_blank"><span>David Chaves Fraga</span></a>,
-								 
-								<a style="color: indianred;" href="https://pietercolpaert.be/#me" target="_blank"><span>Pieter Colpaert</span></a>,
-								 
-								<a style="color: indianred;" href="https://ruben.verborgh.org/profile/#me" target="_blank"><span>Ruben Verborgh</span></a>,
-								 
-								<a style="color: indianred;" href="https://data.verborgh.org/people/erik_mannens" target="_blank"><span>Erik Mannens</span></a>,
-								
-							</h5>
-							<h4>ISWC2017 - Poster and Demos</h4>
-							<p>Using Linked Data based approaches, public transport companies are able to share their time tables and its updates in an affordable way while allowing user agents to perform multimodal route planning algorithms. Providing time table updates, usually published as data streams, means that data is being constantly modified and if there is a large analytical query, its response might be affected due to the changing data. In this demo we introduce a mechanism to tackle this problem by guaranteeing that a user agent will always receive version based responses, therefore ensuring data consistency. Such mechanism also enables access to historical data that could be used for deep analysis of transport systems. However, how this data shall be archived, in order to keep this ap- proach scalable and inexpensive is still a matter of study. In a demonstrator, we published and query data from the Belgium national train system (SNCB) and Madrid Regional Transport Consortium (CRTM). This paper represents the first step towards establishing an affordable framework to publish reliable transport data.</p>
-						</li>
-						
-						<li>
-							<h2>2017</h2>
-							<h3><a href="https://cef-oasis.github.io/tripscore/tripscore.html" target="_blank">The tripscore Linked Data client: calculating specific summaries over large time series</a></h3>
-							<h5> 
-								<a style="color: indianred;" href="https://data.verborgh.org/people/david_chaves" target="_blank"><span>David Chaves Fraga</span></a>,
-								 
-								<a style="color: indianred;" href="https://julianrojas.org/#me" target="_blank"><span>Julián Rojas</span></a>,
-								 
-								<a style="color: indianred;" href="https://julianrojas.org/people/pieter-jan_vandenberghe" target="_blank"><span>Pieter-Jan Vandenberghe</span></a>,
-								 
-								<a style="color: indianred;" href="https://pietercolpaert.be/#me" target="_blank"><span>Pieter Colpaert</span></a>,
-								 
-								<a style="color: indianred;" href="https://data.verborgh.org/people/oscar_corcho" target="_blank"><span>Oscar Corcho</span></a>,
-								
-							</h5>
-							<h4>ISWC2017 - Decentralizing the Semantic Web Workshop</h4>
-							<p>Time series – such as public transport time schedules and their actual departure times – may deliver insights about the public transport network to third parties. Today, however, public transport data is published in a way in which analytical processing is too expensive. In previous work, the Linked Connections(LC) framework was introduced as a cost-efficient publishing alternative to the de-facto GTFS standard and route planning APIs. We study whether this server interface can also be used by Linked Data agents to solve analytical queries over longer periods of time. In this work, we created a serverless Linked Data client in Javascript for the analysis of time series on top of public transport data sources, called tripscore.eu. In this example, it calculates the quality of experience for your journey for the last 5 weeks using the public transport agencies it can discover. We have made the code to this proof of concept available as open source in different reusable components. As the user-perceived performance is quite slow, we formulate opportunities to achieve better response times. We could, on the one hand, suggest the data publisher to publish summaries over longer periods of time. On the other hand, we could also, as reusers, create a private summary of the data on our server and expose this to our user agents. Still an open issue is how this client would discover new public transport agencies reliably, for which we started working on a metadata profile for transport datasets.</p>
-						</li>
-						
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
