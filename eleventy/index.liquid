@@ -74,9 +74,8 @@
                   href="http://idlab.technology/" target="_blank">IDLab</a>.</p>
               <p class="mb-4">A Colombian <img class="flag" src="images/co.png"> living in Belgium <img class="flag"
                   src="images/be.png">.</p>
-
               <h2 class="subheading"><a href="mailto:{{ foaf.email }}">{{ foaf.email }}</a></h2>
-              <h2 class="subheading"><a href="tel:{{ foaf.email }}">{{ foaf.phone }}</a></h2>
+              <h2 class="subheading"><a href="tel:{{ foaf.phone }}">{{ foaf.phone }}</a></h2>
               <ul class="ftco-social mt-3">
                 {% for acc in foaf.account %}
                 <li class="ftco-animate"><a href="{{ acc.id }}"><span class="icon-{{ acc.provider }}"></span></a></li>
