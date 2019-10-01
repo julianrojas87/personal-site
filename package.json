@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "start": "node ./bin/http-server --cors --conneg --trailing",
-    "build": "npx @11ty/eleventy --input=eleventy --output=public"
+    "build": "npx @11ty/eleventy --config eleventy/.eleventy.js"
   },
   "dependencies": {
     "accepts": "^1.3.5",

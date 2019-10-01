@@ -3,3 +3,8 @@ npm-debug.log
 .idea
 .dir-locals.el
 test.js
+public/css
+public/js
+public/icon-fonts
+public/img
+public/index.html

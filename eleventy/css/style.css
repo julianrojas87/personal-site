@@ -36,7 +36,7 @@ h3 {
 
 p {
 	font-size: 18px;
-	color: #808181;
+	color: #212529;
 	line-height: 1.8;
 }
 
@@ -495,23 +495,23 @@ ol {
 	background-size: cover;
 }
 
-.resume-list {
+.timeline {
 	list-style: none;
 	margin-left: 60px;
 	padding-left: 110px;
 	border-left: 2px solid #40424a;
 }
 
-.resume-list li {
+.timeline li {
 	margin-bottom: 120px;
 	position: relative;
 }
 
-.resume-list li:last-child {
+.timeline li:last-child {
 	margin-bottom: 0;
 }
 
-.resume-list li:after {
+.timeline li:after {
 	position: absolute;
 	content: '';
 	width: 15px;
@@ -523,12 +523,12 @@ ol {
 	left: -118px;
 }
 
-.resume-list h2 {
+.timeline h2 {
 	font-size: 72px;
 	margin-bottom: 10px;
 }
 
-.resume-list h4 {
+.timeline h4 {
 	font-size: 16px;
 	text-transform: uppercase;
 	color: #808181;
@@ -536,8 +536,36 @@ ol {
 	margin-bottom: 45px;
 }
 
-.resume-list p {
+.timeline p {
 	margin-bottom: 0;
+}
+
+.full-abstract {
+	display: none;
+}
+
+.full-abstract .abstract-header {
+	font-weight: bold;
+}
+
+.full-abstract .abstract-toggler {
+	font-weight: bold;
+}
+
+.full-abstract a {
+	cursor: pointer;
+}
+
+.collapsed-abstract .abstract-header {
+	font-weight: bold;
+}
+
+.collapsed-abstract .abstract-toggler {
+	font-weight: bold;
+}
+
+.collapsed-abstract a {
+	cursor: pointer;
 }
 
 .projects-section {
@@ -824,7 +852,7 @@ ol {
 	.hidden-md {
 		display: none !important;
 	}
-	.resume-list {
+	.timeline {
 		margin-left: 0;
 		padding-left: 0;
 		border-left: none;
@@ -880,7 +908,7 @@ ol {
 	.social-section .social-links a {
 		margin-right: 30px;
 	}
-	.resume-list h2 {
+	.timeline h2 {
 		font-size: 50px;
 	}
 	.portfolio-item {

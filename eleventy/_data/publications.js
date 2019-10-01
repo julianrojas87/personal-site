@@ -24,8 +24,7 @@ module.exports = async () => {
 
     const comunicaConfig = {
         sources: [
-            //{ type: "file", value: "https://julianrojas.org" },
-            { type: "file", value: "http://localhost:8080" }
+            { type: "file", value: "https://julianrojas.org" }
         ],
     };
 
