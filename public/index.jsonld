@@ -124,7 +124,7 @@
         "title": "Providing Reliable Access to Real-Time and Historic Public Transport Data Using Linked Connections",
         "description": "Using Linked Data based approaches, public transport companies are able to share their time tables and its updates in an affordable way while allowing user agents to perform multimodal route planning algorithms. Providing time table updates, usually published as data streams, means that data is being constantly modified and if there is a large analytical query, its response might be affected due to the changing data. In this demo we introduce a mechanism to tackle this problem by guaranteeing that a user agent will always receive version based responses, therefore ensuring data consistency. Such mechanism also enables access to historical data that could be used for deep analysis of transport systems. However, how this data shall be archived, in order to keep this ap- proach scalable and inexpensive is still a matter of study. In a demonstrator, we published and query data from the Belgium national train system (SNCB) and Madrid Regional Transport Consortium (CRTM). This paper represents the first step towards establishing an affordable framework to publish reliable transport data.",
         "datePublished": "2017",
-        "publisher": "ISWC2017 - Poster and Demos",
+        "publisher": "ISWC2017 - Posters and Demos",
         "author": [
             "https://julianrojas.org/#me",
             "https://data.verborgh.org/people/david_chaves",
@@ -212,6 +212,44 @@
         "sameAs": [
             "https://biblio.ugent.be/publication/8560021",
             "https://dx.doi.org/10.1145/3184558.3191650"
+        ]
+    },
+    {
+        "@context": {
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "schema": "http://schema.org/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "title": "rdfs:label",
+            "description": "rdfs:description",
+            "ScholarlyArticle": "schema:ScholarlyArticle",
+            "datePublished": "schema:datePublished",
+            "publisher": "schema:publisher",
+            "author": {
+                "@id": "schema:author",
+                "@type": "@id",
+                "@container": "@list"
+            },
+            "sameAs": {
+                "@id": "schema:sameAs",
+                "@type": "@id"
+            }
+        },
+        "@id": "https://link.springer.com/chapter/10.1007/978-3-319-98192-5_28",
+        "@type": "ScholarlyArticle",
+        "title": "Supporting sustainable publishing and consuming of live Linked Time Series Streams",
+        "description": "The road to publishing public streaming data on the Web is paved with trade-offs that determine its viability. The cost of unrestricted query answering on top of data streams, may not be affordable for all data publishers. Therefore, public streams need to be funded in a sustainable fashion to remain online. In this paper we present an overview of possible query answering features for live time series in the form of multidimensional interfaces. For example, from a live parking availability data stream, pre-calculated time constrained statistical indicators or geographically classified data can be provided to clients on demand. Furthermore, we demonstrate the initial developments of a Linked Time Series server that supports such features through an extensible modular architecture. Benchmarking the costs associated to each of these features allows to weigh the trade-offs inherent to publishing live time series and establishes the foundations to create a decentralized and sustainable ecosystem for live data streams on the Web.",
+        "datePublished": "2018",
+        "publisher": "ESWC2018 - Poster and Demos",
+        "author": [
+            "https://julianrojas.org/#me",
+            "https://data.verborgh.org/people/gayane_sedrakyan",
+            "https://pietercolpaert.be/#me",
+            "https://data.verborgh.org/people/miel_vander_sande",
+            "https://ruben.verborgh.org/profile/#me"
+        ],
+        "sameAs": [
+            "https://biblio.ugent.be/publication/8566993",
+            "https://dx.doi.org/10.1007/978-3-319-98192-5_28"
         ]
     },
     {
@@ -339,5 +377,33 @@
             "schema:Person"
         ],
         "label": "Ruben Taelman"
+    },
+    {
+        "@context": {
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "schema": "http://schema.org/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "label": "rdfs:label"
+        },
+        "@id": "https://data.verborgh.org/people/gayane_sedrakyan",
+        "@type": [
+            "foaf:Person",
+            "schema:Person"
+        ],
+        "label": "Gayane Sedrakyan"
+    },
+    {
+        "@context": {
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "schema": "http://schema.org/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "label": "rdfs:label"
+        },
+        "@id": "https://data.verborgh.org/people/miel_vander_sande",
+        "@type": [
+            "foaf:Person",
+            "schema:Person"
+        ],
+        "label": "Miel Vander Sande"
     }
 ]
