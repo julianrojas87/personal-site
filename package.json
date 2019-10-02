@@ -19,7 +19,7 @@
   "scripts": {
     "start": "node ./bin/http-server --cors --conneg --trailing",
     "build": "npx @11ty/eleventy --config eleventy/.eleventy.js",
-    "clean": "find ./public ! -name 'index.jsonld' -type d -exec rm -rf {} +"
+    "clean": "cp ./public/index.jsonld . && rm -r public && mkdir public && mv index.jsonld public/"
   },
   "dependencies": {
     "accepts": "^1.3.5",
