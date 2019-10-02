@@ -97,7 +97,7 @@
             "schema:name": "Ghent",
             "sameAs": "gn:2797656"
         },
-        "vcard:title": "PhD. Student",
+        "vcard:title": "PhD. Researcher",
         "title": "MSc.",
         "img": "https://julianrojas.org/resources/img/me.jpg"
     },
@@ -259,6 +259,45 @@
             "foaf": "http://xmlns.com/foaf/0.1/",
             "schema": "http://schema.org/",
             "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "title": "rdfs:label",
+            "description": "rdfs:description",
+            "ScholarlyArticle": "schema:ScholarlyArticle",
+            "datePublished": "schema:datePublished",
+            "publisher": "schema:publisher",
+            "author": {
+                "@id": "schema:author",
+                "@type": "@id",
+                "@container": "@list"
+            },
+            "sameAs": {
+                "@id": "schema:sameAs",
+                "@type": "@id"
+            }
+        },
+        "@id": "http://ogrx.org/paper.html?n=decentralized-open-data-publishing-for-the-public-transport-route-planning-ecosystem",
+        "@type": "ScholarlyArticle",
+        "title": "Decentralized Open Data Publishing for The Public Transport Route Planning Ecosystem",
+        "description": "Open data became a fundamental requirement for the route planning application ecosystem in the public transport sector. The way this data is published has a direct influence in the architectural design of route planning applications, which today tends towards centralized solutions (e.g. Google Maps, CityMapper). Linked Connections emerged as a more scalable and cost-efficient decentralized alternative for public transport open data publishing, compared to centralized approaches . However, how this impacts the different actors that belong to the route planning ecosystem is still unknown. In this work, we study and discuss the potential impact of Linked Connections through a set of evaluations that measure the technical and user-perceived performance of route planning applications that run on the client-side, compared to a traditional approach performing the route planning logic on the server-side. Results showed that (i) for some use cases, a Linked Connections based approach outperforms centralized approaches but it heavily depends on the underlying hardware. (ii) More than half of the travellers that participated on the tests preferred the Linked Connections client application due to additional features such as offline querying and privacy safeguarding regardless of the slower performance in some cases. This work provided insights and an initial assessment of the potential effects of implementing a decentralized open data publishing strategy on the public transport route planning ecosystem. The potential benefits of such an approach are aligned with the ideals of open data of fostering innovation, boosting economic growth and providing solutions for more specific necessities.",
+        "datePublished": "2018",
+        "publisher": "Open Data Research Symposium",
+        "author": [
+            "https://julianrojas.org/#me",
+            "https://data.verborgh.org/people/bert_marcelis",
+            "https://data.verborgh.org/people/eveline_vlassenroot",
+            "https://pietercolpaert.be/#me",
+            "https://data.verborgh.org/people/mathias_van_compernolle",
+            "https://ruben.verborgh.org/profile/#me"
+        ],
+        "sameAs": [
+            "https://biblio.ugent.be/publication/8578331",
+            "https://ruben.verborgh.org/publications/rojas_odrs_2018/#publication"
+        ]
+    },
+    {
+        "@context": {
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "schema": "http://schema.org/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
             "label": "rdfs:label"
         },
         "@id": "https://data.verborgh.org/people/david_chaves",
@@ -407,5 +446,47 @@
             "schema:Person"
         ],
         "label": "Miel Vander Sande"
+    },
+    {
+        "@context": {
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "schema": "http://schema.org/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "label": "rdfs:label"
+        },
+        "@id": "https://data.verborgh.org/people/bert_marcelis",
+        "@type": [
+            "foaf:Person",
+            "schema:Person"
+        ],
+        "label": "Bert Marcelis"
+    },
+    {
+        "@context": {
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "schema": "http://schema.org/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "label": "rdfs:label"
+        },
+        "@id": "https://data.verborgh.org/people/eveline_vlassenroot",
+        "@type": [
+            "foaf:Person",
+            "schema:Person"
+        ],
+        "label": "Eveline Vlassenroot"
+    },
+    {
+        "@context": {
+            "foaf": "http://xmlns.com/foaf/0.1/",
+            "schema": "http://schema.org/",
+            "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+            "label": "rdfs:label"
+        },
+        "@id": "https://data.verborgh.org/people/mathias_van_compernolle",
+        "@type": [
+            "foaf:Person",
+            "schema:Person"
+        ],
+        "label": "Mathias Van Compernolle"
     }
 ]
