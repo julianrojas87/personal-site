@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "start": "node ./bin/http-server --cors --conneg --trailing",
-    "build": "npx @11ty/eleventy --config eleventy/.eleventy.js"
+    "build": "npx @11ty/eleventy --config eleventy/.eleventy.js",
+    "clean": "find ./public ! -name 'index.jsonld' -type d -exec rm -rf {} +"
   },
   "dependencies": {
     "accepts": "^1.3.5",
