@@ -24,6 +24,7 @@
         "@context": {
             "foaf": "http://xmlns.com/foaf/0.1/",
             "schema": "http://schema.org/",
+            "vcard": "http://www.w3.org/2006/vcard/ns#",
             "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
             "wd": "http://www.wikidata.org/entity/",
             "wdt": "http://www.wikidata.org/prop/direct/",
@@ -96,6 +97,7 @@
             "schema:name": "Ghent",
             "sameAs": "gn:2797656"
         },
+        "vcard:title": "PhD. Student";
         "title": "MSc.",
         "img": "https://julianrojas.org/resources/img/me.jpg"
     },
