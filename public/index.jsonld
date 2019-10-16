@@ -123,7 +123,7 @@
         },
         "knows": [
             "https://ruben.verborgh.org/profile/#me",
-            "http://www.rubensworks.net/#me"
+            "https://www.rubensworks.net/#me"
         ]
     },
     {
@@ -232,7 +232,7 @@
             "https://julianrojas.org/#me",
             "https://data.verborgh.org/people/brecht_van_de_vyvere",
             "https://data.verborgh.org/people/arne_gevaert",
-            "http://www.rubensworks.net/#me",
+            "https://www.rubensworks.net/#me",
             "https://pietercolpaert.be/#me",
             "https://ruben.verborgh.org/profile/#me"
         ],
@@ -437,7 +437,7 @@
             "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
             "label": "rdfs:label"
         },
-        "@id": "http://www.rubensworks.net/#me",
+        "@id": "https://www.rubensworks.net/#me",
         "@type": [
             "foaf:Person",
             "schema:Person"
