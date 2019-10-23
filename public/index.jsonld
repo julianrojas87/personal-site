@@ -39,7 +39,10 @@
             "givenName": "foaf:givenName",
             "familyName": "foaf:familyName",
             "phone": "foaf:phone",
-            "email": "foaf:mbox",
+            "email": {
+                "@id":"foaf:mbox",
+                "@type": "@id"
+            },
             "account": "foaf:account",
             "gender": "foaf:gender",
             "homepage": "foaf:homepage",
@@ -80,7 +83,7 @@
         "familyName": "Rojas Meléndez",
         "description": "I am a Linked Open Data, Semantic Web and Transportation researcher at IDLab. A Colombian living in Belgium.",
         "phone": "+32 9 331 49 59",
-        "email": "julianandres.rojasmelendez@ugent.be",
+        "email": "mailto:julianandres.rojasmelendez@ugent.be",
         "account": [
             {
                 "@id": "https://github.com/julianrojas87",
