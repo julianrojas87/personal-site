@@ -79,8 +79,18 @@
         ],
         "label": "Julián Rojas",
         "name": "Julián Andrés Rojas Meléndez",
-        "givenName": "Julián Andrés",
-        "familyName": "Rojas Meléndez",
+        "givenName": [
+            {
+                "@language": "en",
+                "@value": "Julián Andrés"
+            }
+        ],
+        "familyName": [
+            {
+                "@language": "en",
+                "@value": "Rojas Meléndez"
+            }
+        ],
         "description": "I am a Linked Open Data, Semantic Web and Transportation researcher at IDLab. A Colombian living in Belgium.",
         "phone": "+32 9 331 49 59",
         "email": "mailto:julianandres.rojasmelendez@ugent.be",
