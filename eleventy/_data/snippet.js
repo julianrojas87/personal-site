@@ -8,6 +8,8 @@ module.exports = async () => {
             "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
             "schema": "http://schema.org/",
             "name": "rdfs:label",
+            "givenName": "foaf:givenName",
+            "familyName": "foaf:familyName",
             "phone": "foaf:phone",
             "email": "foaf:mbox",
             "img": "foaf:img",
@@ -27,6 +29,8 @@ module.exports = async () => {
         query @single(scope:all) {   
             id
             name
+            givenName
+            familyName
             phone
             email
             birthDate
@@ -41,6 +45,8 @@ module.exports = async () => {
         "@type": "Person",
         "@id": foaf.id,
         "name": foaf.name,
+        "givenName": foaf.givenName,
+        "familyName": foaf.familyName,
         "image": foaf.img,
         "email": foaf.email.substring(7),
         "telephone": foaf.phone,
