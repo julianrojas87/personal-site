@@ -20,7 +20,7 @@ module.exports = async () => {
 
     const comunicaConfig = {
         sources: [
-            { type: "file", value: "https://julianrojas.org" },
+            { type: "file", value: "https://julianrojas.org" }
         ],
     };
 
@@ -44,6 +44,9 @@ module.exports = async () => {
     // Format birth date
     let bd = new Date(data.birthDate);
     data.birthDate = format(bd, "MMMM do, yyyy");
+
+    // Remove "mailto:" from email
+    data.email = data.email.substring(7);
 
     return data;
 };
