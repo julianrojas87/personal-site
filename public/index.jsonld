@@ -104,7 +104,7 @@
                     "@id": "https://github.com/julianrojas87",
                     "@type": "knows:GitHubAccount",
                     "foaf:accountName": "julianrojas87",
-                    "foaf:provider": {
+                    "foaf:accountServiceHomepage": {
                         "@id": "https://github.com/"
                     }
                 },
