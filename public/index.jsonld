@@ -10,6 +10,7 @@
         "wd": "http://www.wikidata.org/entity/",
         "wdt": "http://www.wikidata.org/prop/direct/",
         "gn": "http://sws.geonames.org/",
+        "knows": "https://data.knows.idlab.ugent.be/person/office/#",
         "Document": "foaf:Document",
         "OnlineAccount": "foaf:OnlineAccount",
         "ScholarlyArticle": "schema:ScholarlyArticle",
@@ -43,10 +44,6 @@
         },
         "email": {
             "@id": "foaf:mbox",
-            "@type": "@id"
-        },
-        "knows": {
-            "@id": "foaf:knows",
             "@type": "@id"
         },
         "authorList": {
@@ -107,8 +104,11 @@
             "account": [
                 {
                     "@id": "https://github.com/julianrojas87",
-                    "@type": "OnlineAccount",
-                    "provider": "github"
+                    "@type": "knows:GitHubAccount",
+                    "foaf:accountName": "julianrojas87",
+                    "foaf:accountServiceHomepage": {
+                        "@id": "https://github.com/"
+                    }
                 },
                 {
                     "@id": "https://www.linkedin.com/in/julianrojas87/",
@@ -144,7 +144,7 @@
                 "modulus": "C0B6B547EB3B40A559BCA31FBF596243D802DEAFDDB26D8CC2409EB1E4880A936156E4DD4AC4FF188E826BECDDE6879FD65ACD64715BD9CB4EF8610B6E83F6F6C16A4ECA9FCC6738F4A98120CE5BA63F7A1F97CC2FC740F1AD33AE965AEAF2C390DD247A67D2B32E5AFC2CCF6FFE8EE84170D10FE52275C1CDAAB8B0186D15949E4FE251E6F59E66DADB6DA39F371ADFFD7DCA6E304FCD7AF10CC69D882BA47EB5A82F5E6F722B6AA2DF20781B6174E31B38DA2160A89539761AFDAAD08F25B857F435C1A6DDE77543620A590B2B5561133A89088B301E0984875AD74750682D8155B0E73A1654336533C20BCA0579CCE081CC637EDE6849115EA6EBD210E9A1",
                 "exponent": 65537
             },
-            "knows": [
+            "foaf:knows": [
                 "https://ruben.verborgh.org/profile/#me",
                 "https://www.rubensworks.net/#me"
             ]
