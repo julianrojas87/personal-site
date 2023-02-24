@@ -1,5 +1,6 @@
 {
     "@context": {
+        "jr": "https://julianrojas.org/ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "foaf": "http://xmlns.com/foaf/0.1/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -30,6 +31,7 @@
         "homeLocation": "schema:homeLocation",
         "datePublished": "schema:datePublished",
         "publisher": "schema:publisher",
+        "author": "schema:author",
         "vcTitle": "vcard:title",
         "maker": {
             "@id": "foaf:maker",
@@ -47,8 +49,8 @@
             "@id": "foaf:knows",
             "@type": "@id"
         },
-        "author": {
-            "@id": "schema:author",
+        "authorList": {
+            "@id": "jr:authorList",
             "@type": "@id",
             "@container": "@list"
         },
