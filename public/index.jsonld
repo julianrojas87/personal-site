@@ -1,5 +1,6 @@
 {
     "@context": {
+        "jr": "https://julianrojas.org/ns#",
         "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
         "foaf": "http://xmlns.com/foaf/0.1/",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
@@ -7,7 +8,6 @@
         "schema": "http://schema.org/",
         "vcard": "http://www.w3.org/2006/vcard/ns#",
         "wd": "http://www.wikidata.org/entity/",
-        "wdt": "http://www.wikidata.org/prop/direct/",
         "gn": "http://sws.geonames.org/",
         "knows": "https://data.knows.idlab.ugent.be/person/office/#",
         "Document": "foaf:Document",
@@ -29,9 +29,17 @@
         "provider": "schema:provider",
         "birthPlace": "schema:birthPlace",
         "homeLocation": "schema:homeLocation",
-        "datePublished": "schema:datePublished",
         "publisher": "schema:publisher",
+        "abstract": "schema:abstract",
         "vcTitle": "vcard:title",
+        "contributor": {
+            "@id": "schema:contributor",
+            "@type": "@id"
+        },
+        "datePublished": {
+            "@id": "schema:datePublished",
+            "@type": "xsd:date"
+        },
         "maker": {
             "@id": "foaf:maker",
             "@type": "@id"
@@ -46,15 +54,15 @@
         },
         "author": {
             "@id": "schema:author",
+            "@type": "@id"
+        },
+        "authorList": {
+            "@id": "jr:authorList",
             "@type": "@id",
             "@container": "@list"
         },
         "sameAs": {
             "@id": "schema:sameAs",
-            "@type": "@id"
-        },
-        "orcidId": {
-            "@id": "wdt:P496",
             "@type": "@id"
         },
         "key": "cert:key",
@@ -96,13 +104,14 @@
                     "@value": "Rojas Meléndez"
                 }
             ],
-            "description": "I am a Linked Open Data, Semantic Web and Transportation researcher at IDLab. A Colombian living in Belgium.",
+            "description": "I am a data interoperability and Semantic Web researcher at IDLab. A Colombian living in Belgium.",
             "phone": "+3293314959",
             "email": "mailto:julianandres.rojasmelendez@ugent.be",
             "account": [
                 {
                     "@id": "https://github.com/julianrojas87",
                     "@type": "knows:GitHubAccount",
+                    "provider": "github",
                     "foaf:accountName": "julianrojas87",
                     "foaf:accountServiceHomepage": {
                         "@id": "https://github.com/"
@@ -117,10 +126,14 @@
                     "@id": "https://twitter.com/julianr1987",
                     "@type": "OnlineAccount",
                     "provider": "twitter"
+                },
+                {
+                    "@id": "https://scholar.google.be/citations?user=jZDrVXAAAAAJ&hl=en",
+                    "@type": "OnlineAccount",
+                    "provider": "google-scholar"
                 }
             ],
             "gender": "male",
-            "orcidId": "http://orcid.org/0000-0002-6645-1264",
             "homepage": "https://julianrojas.org/",
             "birthday": "06-27",
             "birthDate": "1987-06-27",
@@ -130,9 +143,9 @@
                 "sameAs": "gn:3671916"
             },
             "homeLocation": {
-                "@id": "wd:Q1296",
-                "schema:name": "Ghent",
-                "sameAs": "gn:2797656"
+                "@id": "wd:Q118958",
+                "schema:name": "Leuven",
+                "sameAs": "gn:2792482"
             },
             "vcTitle": "PhD. Researcher",
             "title": "MSc.",
@@ -142,38 +155,55 @@
                 "modulus": "C0B6B547EB3B40A559BCA31FBF596243D802DEAFDDB26D8CC2409EB1E4880A936156E4DD4AC4FF188E826BECDDE6879FD65ACD64715BD9CB4EF8610B6E83F6F6C16A4ECA9FCC6738F4A98120CE5BA63F7A1F97CC2FC740F1AD33AE965AEAF2C390DD247A67D2B32E5AFC2CCF6FFE8EE84170D10FE52275C1CDAAB8B0186D15949E4FE251E6F59E66DADB6DA39F371ADFFD7DCA6E304FCD7AF10CC69D882BA47EB5A82F5E6F722B6AA2DF20781B6174E31B38DA2160A89539761AFDAAD08F25B857F435C1A6DDE77543620A590B2B5561133A89088B301E0984875AD74750682D8155B0E73A1654336533C20BCA0579CCE081CC637EDE6849115EA6EBD210E9A1",
                 "exponent": 65537
             },
-            "foaf:knows": [
-                "https://ruben.verborgh.org/profile/#me",
-                "https://www.rubensworks.net/#me"
+            "sameAs": [
+                "wd:Q100396451",
+                "http://orcid.org/0000-0002-6645-1264",
+                "https://biblio.ugent.be/person/802002620753",
+                "https://scholar.google.be/citations?user=jZDrVXAAAAAJ&hl=en"
             ]
         },
         {
-            "@id": "https://iswc2017.semanticweb.org/paper-637/",
+            "@id": "https://ceur-ws.org/Vol-1963/paper637.pdf",
             "@type": "ScholarlyArticle",
-            "label": "Providing Reliable Access to Real-Time and Historic Public Transport Data Using Linked Connections",
-            "description": "Using Linked Data based approaches, public transport companies are able to share their time tables and its updates in an affordable way while allowing user agents to perform multimodal route planning algorithms. Providing time table updates, usually published as data streams, means that data is being constantly modified and if there is a large analytical query, its response might be affected due to the changing data. In this demo we introduce a mechanism to tackle this problem by guaranteeing that a user agent will always receive version based responses, therefore ensuring data consistency. Such mechanism also enables access to historical data that could be used for deep analysis of transport systems. However, how this data shall be archived, in order to keep this ap- proach scalable and inexpensive is still a matter of study. In a demonstrator, we published and query data from the Belgium national train system (SNCB) and Madrid Regional Transport Consortium (CRTM). This paper represents the first step towards establishing an affordable framework to publish reliable transport data.",
-            "datePublished": "2017",
-            "publisher": "ISWC2017 - Posters and Demos",
+            "schema:name": "Providing Reliable Access to Real-Time and Historic Public Transport Data Using Linked Connections",
+            "abstract": "Using Linked Data based approaches, public transport companies are able to share their time tables and its updates in an affordable way while allowing user agents to perform multimodal route planning algorithms. Providing time table updates, usually published as data streams, means that data is being constantly modified and if there is a large analytical query, its response might be affected due to the changing data. In this demo we introduce a mechanism to tackle this problem by guaranteeing that a user agent will always receive version based responses, therefore ensuring data consistency. Such mechanism also enables access to historical data that could be used for deep analysis of transport systems. However, how this data shall be archived, in order to keep this ap- proach scalable and inexpensive is still a matter of study. In a demonstrator, we published and query data from the Belgium national train system (SNCB) and Madrid Regional Transport Consortium (CRTM). This paper represents the first step towards establishing an affordable framework to publish reliable transport data.",
+            "datePublished": "2017-10-21",
+            "publisher": "ISWC 2017 - Posters and Demos",
             "author": [
                 "https://julianrojas.org/#me",
                 "https://data.verborgh.org/people/david_chaves",
                 "https://pietercolpaert.be/#me",
                 "https://ruben.verborgh.org/profile/#me",
-                "https://data.verborgh.org/people/erik_mannens"
+                "https://data.knows.idlab.ugent.be/person/erikmannens/#me"
+            ],
+            "authorList": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/david_chaves",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me",
+                "https://data.knows.idlab.ugent.be/person/erikmannens/#me"
             ],
             "sameAs": [
                 "https://biblio.ugent.be/publication/8540883",
                 "https://ruben.verborgh.org/publications/rojas_iswc_demo_2017/#publication"
-            ]
+            ],
+            "contributor": "knows:"
         },
         {
-            "@id": "https://cef-oasis.github.io/tripscore/tripscore.html",
+            "@id": "https://ceur-ws.org/Vol-1934/contribution-10.pdf",
             "@type": "ScholarlyArticle",
-            "label": "The tripscore Linked Data client: calculating specific summaries over large time series",
-            "description": "Time series – such as public transport time schedules and their actual departure times – may deliver insights about the public transport network to third parties. Today, however, public transport data is published in a way in which analytical processing is too expensive. In previous work, the Linked Connections(LC) framework was introduced as a cost-efficient publishing alternative to the de-facto GTFS standard and route planning APIs. We study whether this server interface can also be used by Linked Data agents to solve analytical queries over longer periods of time. In this work, we created a serverless Linked Data client in Javascript for the analysis of time series on top of public transport data sources, called tripscore.eu. In this example, it calculates the quality of experience for your journey for the last 5 weeks using the public transport agencies it can discover. We have made the code to this proof of concept available as open source in different reusable components. As the user-perceived performance is quite slow, we formulate opportunities to achieve better response times. We could, on the one hand, suggest the data publisher to publish summaries over longer periods of time. On the other hand, we could also, as reusers, create a private summary of the data on our server and expose this to our user agents. Still an open issue is how this client would discover new public transport agencies reliably, for which we started working on a metadata profile for transport datasets.",
-            "datePublished": "2017",
-            "publisher": "ISWC2017 - Decentralizing the Semantic Web Workshop",
+            "schema:name": "The tripscore Linked Data client: calculating specific summaries over large time series",
+            "abstract": "Time series – such as public transport time schedules and their actual departure times – may deliver insights about the public transport network to third parties. Today, however, public transport data is published in a way in which analytical processing is too expensive. In previous work, the Linked Connections(LC) framework was introduced as a cost-efficient publishing alternative to the de-facto GTFS standard and route planning APIs. We study whether this server interface can also be used by Linked Data agents to solve analytical queries over longer periods of time. In this work, we created a serverless Linked Data client in Javascript for the analysis of time series on top of public transport data sources, called tripscore.eu. In this example, it calculates the quality of experience for your journey for the last 5 weeks using the public transport agencies it can discover. We have made the code to this proof of concept available as open source in different reusable components. As the user-perceived performance is quite slow, we formulate opportunities to achieve better response times. We could, on the one hand, suggest the data publisher to publish summaries over longer periods of time. On the other hand, we could also, as reusers, create a private summary of the data on our server and expose this to our user agents. Still an open issue is how this client would discover new public transport agencies reliably, for which we started working on a metadata profile for transport datasets.",
+            "datePublished": "2017-10-21",
+            "publisher": "ISWC 2017 - Decentralizing the Semantic Web Workshop",
             "author": [
+                "https://data.verborgh.org/people/david_chaves",
+                "https://julianrojas.org/#me",
+                "https://julianrojas.org/people/pieter-jan_vandenberghe",
+                "https://pietercolpaert.be/#me",
+                "https://data.verborgh.org/people/oscar_corcho"
+            ],
+            "authorList": [
                 "https://data.verborgh.org/people/david_chaves",
                 "https://julianrojas.org/#me",
                 "https://julianrojas.org/people/pieter-jan_vandenberghe",
@@ -183,18 +213,27 @@
             "sameAs": [
                 "http://oa.upm.es/50157/",
                 "https://openreview.net/forum?id=H16ZExYLb"
-            ]
+            ],
+            "contributor": "knows:"
         },
         {
-            "@id": "https://dl.acm.org/citation.cfm?id=3191650",
+            "@id": "https://doi.org/10.1145/3184558.3191650",
             "@type": "ScholarlyArticle",
-            "label": "A Preliminary Open Data Publishing Strategy for Live Data in Flanders",
-            "description": "For smart decision making, user agents need live and historic access to open data from sensors installed in the public domain. In contrast to a closed environment, for Open Data and federated query processing algorithms, the data publisher cannot anticipate in advance on specific questions, nor can it deal with a bad cost-efficiency of the server interface when data consumers increase. When publishing observations from sensors, different fragmentation strategies can be thought of depending on how the historic data needs to be queried. Furthermore, both publish/subscribe and polling strategies exist to publish live updates. Each of these strategies come with their own trade-offs regarding cost-efficiency of the server-interface, user-perceived performance and cpu use. A polling strategy where multiple observations are published in a paged collection was tested in a proof of concept for parking spaces availability. In order to understand the different resource trade-offs presented by publish/subscribe and polling publication strategies, we devised an experiment on two machines, for a scalability test. The preliminary results were inconclusive and suggest more large scale tests are needed in order to see a trend. While the large-scale tests will be performed in future work, the proof of concept helped to identify the technical Open Data principles for the 13 biggest cities in Flanders.",
-            "datePublished": "2018",
+            "schema:name": "A Preliminary Open Data Publishing Strategy for Live Data in Flanders",
+            "abstract": "For smart decision making, user agents need live and historic access to open data from sensors installed in the public domain. In contrast to a closed environment, for Open Data and federated query processing algorithms, the data publisher cannot anticipate in advance on specific questions, nor can it deal with a bad cost-efficiency of the server interface when data consumers increase. When publishing observations from sensors, different fragmentation strategies can be thought of depending on how the historic data needs to be queried. Furthermore, both publish/subscribe and polling strategies exist to publish live updates. Each of these strategies come with their own trade-offs regarding cost-efficiency of the server-interface, user-perceived performance and cpu use. A polling strategy where multiple observations are published in a paged collection was tested in a proof of concept for parking spaces availability. In order to understand the different resource trade-offs presented by publish/subscribe and polling publication strategies, we devised an experiment on two machines, for a scalability test. The preliminary results were inconclusive and suggest more large scale tests are needed in order to see a trend. While the large-scale tests will be performed in future work, the proof of concept helped to identify the technical Open Data principles for the 13 biggest cities in Flanders.",
+            "datePublished": "2018-04-23",
             "publisher": "The Web Conference 2018 - Web Stream Processing Workshop",
             "author": [
                 "https://julianrojas.org/#me",
-                "https://data.verborgh.org/people/brecht_van_de_vyvere",
+                "https://w3id.org/people/brechtvdv/#me",
+                "https://data.verborgh.org/people/arne_gevaert",
+                "https://www.rubensworks.net/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://julianrojas.org/#me",
+                "https://w3id.org/people/brechtvdv/#me",
                 "https://data.verborgh.org/people/arne_gevaert",
                 "https://www.rubensworks.net/#me",
                 "https://pietercolpaert.be/#me",
@@ -203,16 +242,24 @@
             "sameAs": [
                 "https://biblio.ugent.be/publication/8560021",
                 "https://dx.doi.org/10.1145/3184558.3191650"
-            ]
+            ],
+            "contributor": "knows:"
         },
         {
-            "@id": "https://link.springer.com/chapter/10.1007/978-3-319-98192-5_28",
+            "@id": "https://doi.org/10.1007/978-3-319-98192-5_28",
             "@type": "ScholarlyArticle",
-            "label": "Supporting sustainable publishing and consuming of live Linked Time Series Streams",
-            "description": "The road to publishing public streaming data on the Web is paved with trade-offs that determine its viability. The cost of unrestricted query answering on top of data streams, may not be affordable for all data publishers. Therefore, public streams need to be funded in a sustainable fashion to remain online. In this paper we present an overview of possible query answering features for live time series in the form of multidimensional interfaces. For example, from a live parking availability data stream, pre-calculated time constrained statistical indicators or geographically classified data can be provided to clients on demand. Furthermore, we demonstrate the initial developments of a Linked Time Series server that supports such features through an extensible modular architecture. Benchmarking the costs associated to each of these features allows to weigh the trade-offs inherent to publishing live time series and establishes the foundations to create a decentralized and sustainable ecosystem for live data streams on the Web.",
-            "datePublished": "2018",
-            "publisher": "ESWC2018 - Poster and Demos",
+            "schema:name": "Supporting sustainable publishing and consuming of live Linked Time Series Streams",
+            "abstract": "The road to publishing public streaming data on the Web is paved with trade-offs that determine its viability. The cost of unrestricted query answering on top of data streams, may not be affordable for all data publishers. Therefore, public streams need to be funded in a sustainable fashion to remain online. In this paper we present an overview of possible query answering features for live time series in the form of multidimensional interfaces. For example, from a live parking availability data stream, pre-calculated time constrained statistical indicators or geographically classified data can be provided to clients on demand. Furthermore, we demonstrate the initial developments of a Linked Time Series server that supports such features through an extensible modular architecture. Benchmarking the costs associated to each of these features allows to weigh the trade-offs inherent to publishing live time series and establishes the foundations to create a decentralized and sustainable ecosystem for live data streams on the Web.",
+            "datePublished": "2018-06-03",
+            "publisher": "ESWC 2018 - Poster and Demos",
             "author": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/gayane_sedrakyan",
+                "https://pietercolpaert.be/#me",
+                "https://data.verborgh.org/people/miel_vander_sande",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
                 "https://julianrojas.org/#me",
                 "https://data.verborgh.org/people/gayane_sedrakyan",
                 "https://pietercolpaert.be/#me",
@@ -222,16 +269,25 @@
             "sameAs": [
                 "https://biblio.ugent.be/publication/8566993",
                 "https://dx.doi.org/10.1007/978-3-319-98192-5_28"
-            ]
+            ],
+            "contributor": "knows:"
         },
         {
             "@id": "http://ogrx.org/paper.html?n=decentralized-open-data-publishing-for-the-public-transport-route-planning-ecosystem",
             "@type": "ScholarlyArticle",
-            "label": "Decentralized Open Data Publishing for The Public Transport Route Planning Ecosystem",
-            "description": "Open data became a fundamental requirement for the route planning application ecosystem in the public transport sector. The way this data is published has a direct influence in the architectural design of route planning applications, which today tends towards centralized solutions (e.g. Google Maps, CityMapper). Linked Connections emerged as a more scalable and cost-efficient decentralized alternative for public transport open data publishing, compared to centralized approaches . However, how this impacts the different actors that belong to the route planning ecosystem is still unknown. In this work, we study and discuss the potential impact of Linked Connections through a set of evaluations that measure the technical and user-perceived performance of route planning applications that run on the client-side, compared to a traditional approach performing the route planning logic on the server-side. Results showed that (i) for some use cases, a Linked Connections based approach outperforms centralized approaches but it heavily depends on the underlying hardware. (ii) More than half of the travellers that participated on the tests preferred the Linked Connections client application due to additional features such as offline querying and privacy safeguarding regardless of the slower performance in some cases. This work provided insights and an initial assessment of the potential effects of implementing a decentralized open data publishing strategy on the public transport route planning ecosystem. The potential benefits of such an approach are aligned with the ideals of open data of fostering innovation, boosting economic growth and providing solutions for more specific necessities.",
-            "datePublished": "2018",
-            "publisher": "Open Data Research Symposium",
+            "schema:name": "Decentralized Open Data Publishing for The Public Transport Route Planning Ecosystem",
+            "abstract": "Open data became a fundamental requirement for the route planning application ecosystem in the public transport sector. The way this data is published has a direct influence in the architectural design of route planning applications, which today tends towards centralized solutions (e.g. Google Maps, CityMapper). Linked Connections emerged as a more scalable and cost-efficient decentralized alternative for public transport open data publishing, compared to centralized approaches . However, how this impacts the different actors that belong to the route planning ecosystem is still unknown. In this work, we study and discuss the potential impact of Linked Connections through a set of evaluations that measure the technical and user-perceived performance of route planning applications that run on the client-side, compared to a traditional approach performing the route planning logic on the server-side. Results showed that (i) for some use cases, a Linked Connections based approach outperforms centralized approaches but it heavily depends on the underlying hardware. (ii) More than half of the travellers that participated on the tests preferred the Linked Connections client application due to additional features such as offline querying and privacy safeguarding regardless of the slower performance in some cases. This work provided insights and an initial assessment of the potential effects of implementing a decentralized open data publishing strategy on the public transport route planning ecosystem. The potential benefits of such an approach are aligned with the ideals of open data of fostering innovation, boosting economic growth and providing solutions for more specific necessities.",
+            "datePublished": "2018-09-25",
+            "publisher": "3rd Open Data Research Symposium",
             "author": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/bert_marcelis",
+                "https://data.verborgh.org/people/eveline_vlassenroot",
+                "https://pietercolpaert.be/#me",
+                "https://data.verborgh.org/people/mathias_van_compernolle",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
                 "https://julianrojas.org/#me",
                 "https://data.verborgh.org/people/bert_marcelis",
                 "https://data.verborgh.org/people/eveline_vlassenroot",
@@ -242,7 +298,376 @@
             "sameAs": [
                 "https://biblio.ugent.be/publication/8578331",
                 "https://ruben.verborgh.org/publications/rojas_odrs_2018/#publication"
-            ]
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.5281/zenodo.2677833",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Open data sectors and communities : transport",
+            "abstract": "Public transport has been a poster-child of the open data movement with a variety of route planning applications used by millions of people every day. Transport data can also be used to analyse policy and advocate for service improvements. Tensions exist between centralised route planning services and distributed, open data-driven approaches to transport data. Only a fraction of the data used to drive mobility apps is truly open, and current technical architectures risk holding back a next wave of innovation. Data-driven transport tools have been developed worldwide; however, established standards need to be more flexible in order to accommodate semi-structured and informal transport networks in the developing world. The future success of “Mobility as a Service” will depend on a much greater range of open transport data and application programming interfaces (APIs)",
+            "datePublished": "2019-05-08",
+            "publisher": "African Minds and International Development Research Centre",
+            "author": [
+                "https://pietercolpaert.be/#me",
+                "https://julianrojas.org/#me"
+            ],
+            "authorList": [
+                "https://pietercolpaert.be/#me",
+                "https://julianrojas.org/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1007/978-3-030-32327-1_3",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Republishing OpenStreetMap's roads as linked routable tiles",
+            "abstract": "Route planning providers manually integrate different geo-spatial datasets before offering a Web service to developers, thus creating a closed world view. In contrast, combining open datasets at runtime can provide more information for user-specific route planning needs. For example, an extra dataset of bike sharing availabilities may provide more relevant information to the occasional cyclist. A strategy for automating the adoption of open geo-spatial datasets is needed to allow an ecosystem of route planners able to answer more specific and complex queries. This raises new challenges such as (i) how open geo-spatial datasets should be published on the Web to raise interoperability, and (ii) how route planners can discover and integrate relevant data for a certain query on the fly. We republished OpenStreetMap’s road network as “Routable Tiles” to facilitate its integration into open route planners. To achieve this, we use a Linked Data strategy and follow an approach similar to vector tiles. In a demo, we show how client-side code can automatically discover tiles and perform a shortest path algorithm. We provide four contributions: (i) we launched an open geo-spatial dataset that is available for everyone to reuse at no cost, (ii) we published a Linked Data version of the OpenStreetMap ontology, (iii) we introduced a hypermedia specification for vector tiles that extends the Hydra ontology, and (iv) we released the mapping scripts, demo and routing scripts as open source software.",
+            "datePublished": "2019-06-12",
+            "publisher": "ESWC 2019 - Poster and Demos",
+            "author": [
+                "https://pietercolpaert.be/#me",
+                "https://data.verborgh.org/people/ben_abelshausen",
+                "https://julianrojas.org/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://pietercolpaert.be/#me",
+                "https://data.verborgh.org/people/ben_abelshausen",
+                "https://julianrojas.org/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://ceur-ws.org/Vol-2447/paper4.pdf",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Decentralized publication and consumption of transfer footpaths",
+            "abstract": "Users expect route planners that combine all modes of transportation to propose good journeys to their destination. These route planners use data from several sources such as road networks and schedule-based public transit. We focus on the link between the two; specifically, the walking distances between stops. Research in this field so far has found that computing these paths dynamically is too slow, but that computing all of them results in a quadratically scaling number of edges which is prohibitively expensive in practice. The common solution is to cluster the stops into small unconnected graphs, but this restricts the amount of walking and has a significant impact on the travel times. Moreover, clustering operates on a closed-world assumption, which makes it impractical to add additional public transit services. A decentralized publishing strategy that fixes these issues should thus (i) scale gracefully with the number of stops; (ii) support unrestricted walking; (iii) make it easy to add new services and (iv) support splitting the work among several actors. We introduce a publishing strategy that is based on the Delaunay triangulation of public transit stops, where every triangle edge corresponds to a single footpath that is precomputed. This guarantees that all stops are reachable from one another, while the number of precomputed paths increases linearly with the number of stops. Each public transit service can be processed separately, and combining several operators' can be done with a minimal amount of work. Approximating the walking distance with a path along the triangle edges overestimates the actual distance by 20% on average. Our results show that our approach is a middle-ground between completeness and practicality. It consistently overestimates the walking distances, but this seems workable since overestimating the time needed to catch a connection is arguably better than recommending an impossible journey. The estimates could still be improved by combining the great-circle distance with our approximations. Alternatively, different triangulations could be combined to create a more complete graph.",
+            "datePublished": "2019-09-09",
+            "publisher": "SEMANTiCS 2019 - 1st Semantics for Transport Workshop",
+            "author": [
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://julianrojas.org/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://julianrojas.org/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.5281/ZENODO.3387705",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Client-side route planning : preprocessing the OpenStreetMap road network for Routable Tiles",
+            "abstract": "Travelers have higher expectations than current route planning providers can fulfill, yet new solutions struggle to break through. Matching user experience from existing applications is already challenging without the large-scale infrastructure most of them have at their disposal; additionally integrating datasets such as the road network, public transportation schedules, or even real time air quality data is an even more laborious endeavour.",
+            "datePublished": "2019-09-21",
+            "publisher": "State of the Map 2019",
+            "author": [
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/ben_abelshausen",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/ben_abelshausen",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://ceur-ws.org/Vol-2548/paper-09.pdf",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Decentralized route planning across the web of data",
+            "abstract": "Wheelchair users looking for accessible public transport routes, tourists discovering attractive routes to go around a new city, or bicycle users trying to avoid highly polluted routes are some examples where highly individualized route planning is needed. Current route planning applications lack query flexibility. The types of queries supported by a route planner are only determined at design time and heavily depend on centralized pre-selected data sources. Integrating a new data source such as another transport mode, a different road network or wheelchair accessibility is not straightforward as it generally requires human intervention to extend the subjacent data model and route planning algorithm implementation. I investigate how relevant data sources available on the Web can be dynamically reused for answering custom queries, and thus allow creating more flexible and personalized route planning applications. Semantic Web and Linked Data technologies provide a common framework for data integration. Yet it is still unclear how relevant data can be automatically reused while remaining independent from specific route planning algorithm implementations. Preliminary work (i) tests the feasibility of solving route planning queries over live and static public transport data sources on the Web, (ii) explores the trade-offs of different Web APIs for publishing and consuming live data streams on the Web and (iii) introduces a Linked Data based approach for publishing road networks data.",
+            "datePublished": "2019-10-27",
+            "publisher": "ISWC 2019 - PhD Symposium",
+            "author": [ "https://julianrojas.org/#me" ],
+            "authorList": [ "https://julianrojas.org/#me" ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1007/978-3-030-50578-3_21",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Geospatial partitioning of open transit data",
+            "abstract": "Public transit operators often publish their open data as a single data dump, but developers with limited computational resources may not be able to process all this data. Existing work has already focused on fragmenting the data by departure time, so that data consumers can be more selective in the data they process. However, each fragment still contains data from the entire operator’s service area. We build upon this idea by fragmenting geospatially as well as by departure time. Our method is robust to changes in the original data, such as the deletion or the addition of stops, which is crucial in scenarios where data publishers do not control the data itself. In this paper we explore popular clustering methods such as k-means and METIS, alongside two simple domain-specific methods of our own. We compare the effectiveness of each for the use case of client-side route planning, focusing on the ease of use of the data and the cacheability of the data fragments. Our results show that simply clustering stops by their proximity to 8 transport hubs yields the most promising results: queries are 2.4 times faster and download 4 times less data. More than anything though, our results show that the difference between clustering methods is small, and that engineers can safely choose practical and simple solutions. We expect that this insight also holds true for publishing other geospatial data such as road networks, sensor data, or points of interest.",
+            "datePublished": "2020-06-09",
+            "publisher": "ICWE 2020",
+            "author": [
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://julianrojas.org/#me",
+                "https://julianrojas.org/people/pieter-jan_vandenberghe",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://julianrojas.org/#me",
+                "https://julianrojas.org/people/pieter-jan_vandenberghe",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "https://doi.org/10.1007/978-3-030-50578-3_22",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Efficient live public transport data sharing for route planning on the Web",
+            "abstract": "Web-based information services transformed how we interact with public transport. Discovering alternatives to reach destinations and obtaining live updates about them is necessary to optimize journeys and improve the quality of travellers’ experience. However, keeping travellers updated with opportune information is demanding. Traditional Web APIs for live public transport data follow a polling approach and allocate all data processing on either data providers, lowering data accessibility, or data consumers, increasing the costs of innovative solutions. Moreover, data processing load increases further because previously obtained route plans are fully recalculated when live updates occur. In between solutions sharing processing load between clients and servers, and alternative Web API architectures were not thoroughly investigated yet. We study performance trade-offs of polling and push-based Web architectures to efficiently publish and consume live public transport data. We implement (i) alternative architectures that allow sharing data processing load between clients and servers, and evaluate their performance following polling- and push-based approaches; (ii) a rollback mechanism that extends the Connection Scan Algorithm to avoid unnecessary full route plan recalculations upon live updates. Evaluations show polling as a more efficient alternative on CPU and RAM but hint towards push-based alternatives when bandwidth is a concern. Clients update route plan results 8–10 times faster with our rollback approach. Smarter API design combining polling and push-based Web interfaces for live public transport data reduces the intrinsic costs of data sharing by equitably distributing the processing load between clients and servers. Future work can investigate more complex multimodal transport scenarios.",
+            "datePublished": "2020-06-09",
+            "publisher": "ICWE 2020",
+            "author": [
+                "https://julianrojas.org/#me",
+                "https://dylanvanassche.be/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://julianrojas.org/#me",
+                "https://dylanvanassche.be/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1007/978-3-030-65665-2_6",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Velopark: A linked open data platform for bicycle parkings",
+            "abstract": "Cycling as a mean of urban transportation is positively correlated with cleaner, healthier and happier cities. By providing more infrastructure, such as secure parking facilities, cities aim on attracting more cyclists. However, authoritative information about parking facilities is heavily decentralized and heterogeneous, which makes secure parking facilities harder to be discovered by cyclists. Can an open dataset about bike parkings be managed decentrally? In this paper, we present the results of the Velopark project, carried out in Belgium by different actors that include local public authorities, public transport operators and pro-cycling organizations. During the project execution we (i) introduced the Open Velopark Vocabulary as a common semantic data model; and (ii) implemented the Velopark platform, an open data publishing environment for both static and live authoritative parking data. So far, 1599 parking facilities were published through the Velopark platform, 31 different Belgian municipalities and 4 parking related organizations use the platform to describe, publish and manage their parking facilities. A common data publishing environment supports organizations for providing access to their information, while guaranteeing data reliability for cyclists. In future work we will further extend our data model to cover other kinds of infrastructure and bicycle-related services.",
+            "datePublished": "2020-06-09",
+            "publisher": "ICWE 2020 - 2nd Semantics for Transport Workshop",
+            "author": [
+                "https://julianrojas.org/#me",
+                "https://julianrojas.org/people/pieter_morlion",
+                "https://julianrojas.org/people/han_tambuyzer",
+                "https://julianrojas.org/people/wout_baert",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://julianrojas.org/#me",
+                "https://julianrojas.org/people/pieter_morlion",
+                "https://julianrojas.org/people/han_tambuyzer",
+                "https://julianrojas.org/people/wout_baert",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1007/978-3-030-65665-2_7",
+            "@type": "ScholarlyArticle",
+            "schema:name": "How to Prototype a Client-Side Route Planner for Helsinki with Routable Tiles and Linked Connections",
+            "abstract": "Route planning is key in application domains such as delivery services, tourism advice and ride sharing. Today’s route planning as a service solutions do not cover all requirements of each use case, forcing application developers to build their own self-hosted route planners. This quickly becomes expensive to develop and maintain, especially when it requires integrating data from different sources. We demo a configurable route planner that takes advantage of strategically designed data publishing approaches and performs data integration and query execution on the client. For this demonstrator, we (i) publish a Linked Connections interface for the public transit data in Helsinki, including live updates; (ii) integrate Routable Tiles, a tiled Linked Data version of OpenStreetMap road network and (iii) implement a graphical user interface, on top of the Planner.js SDK we have built, to display the query results. By moving the data integration to the client, we provide higher flexibility for application developers to customize their solutions according to their needs. While the querying might be slow today, these preliminary results already hint at different data publishing strategies that may increase query evaluation performance on the client-side.",
+            "datePublished": "2020-06-09",
+            "publisher": "ICWE 2020 - 2nd Semantics for Transport Workshop",
+            "author": [
+                "https://julianrojas.org/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://julianrojas.org/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1007/978-3-030-74296-6_3",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Publishing base registries as linked data event streams",
+            "abstract": "Fostering interoperability, Public Sector Bodies (PSBs) maintain datasets that should become queryable as an integrated Knowledge Graph (KG). While some PSBs allow to query a part of the KG on their servers, others favor publishing data dumps allowing the querying to happen on third party servers. As the budget of a PSB to publish their dataset on the Web is finite, PSBs need guidance on what interface to offer first. A core API can be designed that covers the core tasks of Base Registries, which is a well-defined term in Flanders for the management of authoritative datasets. This core API should be the basis on which an ecosystem of data services can be built. In this paper, we introduce the concept of a Linked Data Event Stream (LDES) for datasets like air quality sensors and observations or a registry of officially registered addresses. We show that extra ecosystem requirements can be built on top of the LDES using a generic fragmenter. By using hypermedia for describing the LDES as well as the derived datasets, agents can dynamically discover their best way through the KG, and server administrators can dynamically add or remove functionality based on costs and needs. This way, we allow PSBs to prioritize API functionality based on three tiers: (i) the LDES, (ii) intermediary indexes and (iii) querying interfaces. While the ecosystem will never be feature-complete, based on the market needs, PSBs as well as market players can fill in gaps as requirements evolve.",
+            "datePublished": "2021-05-18",
+            "publisher": "ICWE 2021",
+            "author": [
+                "https://data.knows.idlab.ugent.be/person/dwightvanlancker/#me",
+                "https://pietercolpaert.be/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://w3id.org/people/brechtvdv/#me",
+                "https://julianrojas.org/#me",
+                "https://pod.rubendedecker.be/profile/card#me",
+                "https://data.verborgh.org/people/philippe_michiels",
+                "https://data.knows.idlab.ugent.be/person/rafbuyle/#me",
+                "https://data.verborgh.org/people/annelies_de_craene",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://data.knows.idlab.ugent.be/person/dwightvanlancker/#me",
+                "https://pietercolpaert.be/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://w3id.org/people/brechtvdv/#me",
+                "https://julianrojas.org/#me",
+                "https://pod.rubendedecker.be/profile/card#me",
+                "https://data.verborgh.org/people/philippe_michiels",
+                "https://data.knows.idlab.ugent.be/person/rafbuyle/#me",
+                "https://data.verborgh.org/people/annelies_de_craene",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "https://doi.org/10.47622/978-1-928502-12-8_8",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Decentralised open data publishing for the public transport route planning ecosystem",
+            "abstract": "Open data initiatives have created a revolution in the route planning ecosystem for the public transport sector. The creation of a large amount of route planning services like Google Maps, CityMapper or Navitia, has only been possible thanks to the availability of public transport data as open data. Ever since the disclosure of the London public transport data sources as open data (Hogge 2016) more public transport companies are following their lead around the world. The benefits obtained by disclosing public transport datasets as open data are diverse and influence the different actors present in the route planning ecosystem: public transport organisations in the role of data publishers for instance may increase their revenue streams as new and better information channels attract more travellers (UK Department for Transport et al. 2018). Also, new analysis and improvements to their operations become possible through feedback received from data reusers on areas where they do not collect data by themselves (e.g. crowdsourced data).",
+            "datePublished": "2020-09-25",
+            "publisher": "African Minds and International Development Research Centre",
+            "author": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/bert_marcelis",
+                "https://data.verborgh.org/people/eveline_vlassenroot",
+                "https://data.verborgh.org/people/mathias_van_compernolle",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/bert_marcelis",
+                "https://data.verborgh.org/people/eveline_vlassenroot",
+                "https://data.verborgh.org/people/mathias_van_compernolle",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.13052/jwe1540-9589.2045",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Geospatially partitioning public transit networks for open data publishing",
+            "abstract": "Public transit operators often publish their open data in a data dump, but developers with limited computational resources may not have the means to process all this data efficiently. In our prior work we have shown that geospatially partitioning an operator's network can improve query times for client-side route planning applications by a factor of 2.4. However, it remains unclear whether this works for all network types, or other kinds of applications. To answer these questions, we must evaluate the same method on more networks and analyze the effect of geospatial partitioning on each network separately. In this paper we process three networks in Belgium: (i) the national railways, (ii) the regional operator in Flanders, and (iii) the network of the city of Brussels, using both real and artificially generated query sets. Our findings show that on the regional network, we can make query processing 4 times more efficient, but we could not improve the performance over the city network by more than 12%. Both the network's topography, and to a lesser extent how users interact with the network, determine how suitable the network is for partitioning. Thus, we come to a negative answer to our question: our method does not work equally well for all networks. Moreover, since the network's topography is the main determining factor, we expect this finding to apply to other graph-based geospatial data, as well as other Link Traversal-based applications.",
+            "datePublished": "2021-07-08",
+            "publisher": "Journal of Web Engineering",
+            "author": [
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://julianrojas.org/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://julianrojas.org/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.3390/data6080093",
+            "@type": "ScholarlyArticle",
+            "schema:name": "A sustainable method for publishing interoperable open data on the web",
+            "abstract": "Smart cities need (sensor) data for better decision-making. However, while there are vast amounts of data available about and from cities, an intermediary is needed that connects and interprets (sensor) data on a Web-scale. Today, governments in Europe are struggling to publish open data in a sustainable, predictable and cost-effective way. Our research question considers what methods for publishing Linked Open Data time series, in particular air quality data, are suitable in a sustainable and cost-effective way. Furthermore, we demonstrate the cross-domain applicability of our data publishing approach through a different use case on railway infrastructure-Linked Open Data. Based on scenarios co-created with various governmental stakeholders, we researched methods to promote data interoperability, scalability and flexibility. The results show that applying a Linked Data Fragments-based approach on public endpoints for air quality and railway infrastructure data, lowers the cost of publishing and increases availability due to better Web caching strategies.",
+            "datePublished": "2021-08-19",
+            "publisher": "Data",
+            "author": [
+                "https://data.knows.idlab.ugent.be/person/rafbuyle/#me",
+                "https://w3id.org/people/brechtvdv/#me",
+                "https://julianrojas.org/#me",
+                "https://data.knows.idlab.ugent.be/person/dwightvanlancker/#me",
+                "https://data.verborgh.org/people/eveline_vlassenroot",
+                "https://data.verborgh.org/people/mathias_van_compernolle",
+                "https://julianrojas.org/people/stefan_lefever",
+                "https://pietercolpaert.be/#me",
+                "https://data.verborgh.org/people/peter_mechant",
+                "https://data.knows.idlab.ugent.be/person/erikmannens/#me"
+            ],
+            "authorList": [
+                "https://data.knows.idlab.ugent.be/person/rafbuyle/#me",
+                "https://w3id.org/people/brechtvdv/#me",
+                "https://julianrojas.org/#me",
+                "https://data.knows.idlab.ugent.be/person/dwightvanlancker/#me",
+                "https://data.verborgh.org/people/eveline_vlassenroot",
+                "https://data.verborgh.org/people/mathias_van_compernolle",
+                "https://julianrojas.org/people/stefan_lefever",
+                "https://pietercolpaert.be/#me",
+                "https://data.verborgh.org/people/peter_mechant",
+                "https://data.knows.idlab.ugent.be/person/erikmannens/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://dx.doi.org/10.1007/978-3-030-88361-4_38",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Leveraging semantic technologies for digital interoperability in the European railway domain",
+            "abstract": "The European Union Agency for Railways is an European authority, tasked with the provision of a legal and technical framework to support harmonized and safe cross-border railway operations throughout the EU. So far, the agency relied on traditional application-centric approaches to support the data exchange among multiple actors interacting within the railway domain. This lead however, to isolated digital environments that consequently added barriers to digital interoperability while increasing the cost of maintenance and innovation. In this work, we show how Semantic Web technologies are leveraged to create a semantic layer for data integration across the base registries maintained by the agency. We validate the usefulness of this approach by supporting route compatibility checks, a highly demanded use case in this domain, which was not available over the agency’s registries before. Our contributions include (i) an official ontology for the railway infrastructure and authorized vehicle types, including 28 reference datasets; (ii) a reusable Knowledge Graph describing the European railway infrastructure; (iii) a cost-efficient system architecture that enables high-flexibility for use case development; and (iv) an open source and RDF native Web application to support route compatibility checks. This work demonstrates how data-centric system design, powered by Semantic Web technologies and Linked Data principles, provides a framework to achieve data interoperability and unlock new and innovative use cases and applications. Based on the results obtained during this work, ERA officially decided to make Semantic Web and Linked Data-based approaches, the default setting for any future development of the data, registers and specifications under the agency’s remit for data exchange mandated by the EU legal framework. The next steps, which are already underway, include further developing and bringing these solutions to a production-ready state.",
+            "datePublished": "2021-10-24",
+            "publisher": "ISWC 2021",
+            "author": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/marina_aguado",
+                "https://data.verborgh.org/people/polymnia_vasilopoulou",
+                "https://data.verborgh.org/people/ivo_velitchkov",
+                "https://dylanvanassche.be/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://julianrojas.org/#me",
+                "https://data.verborgh.org/people/marina_aguado",
+                "https://data.verborgh.org/people/polymnia_vasilopoulou",
+                "https://data.verborgh.org/people/ivo_velitchkov",
+                "https://dylanvanassche.be/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "http://ceur-ws.org/Vol-3141/paper3.pdf",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Continuous generation of versioned collections' members with RML and LDES",
+            "abstract": "When evolving datasets are used to generate a knowledge graph, it is usually challenging to keep the graph synchronized in a timely manner when changes occur in the source data. Current approaches fully regenerate a knowledge graph in such cases, which may be time consuming depending on the data type, size, and update frequency. We propose a continuous knowledge graph generation approach that can be applied on different types of data sources. We describe continuously updating knowledge graph versions represented as a Linked Data Events Stream, and use an rml processor for rdf generation. In this paper, we present our approach and demonstrate it on different types of data such as bike-sharing, public transport timetables, and weather data. By describing entities with unique, immutable, and reproducible iris, we were able to identify changes in the original data collection, reducing the number of materialized triples and generation time. Our use-cases show the importance of mechanisms to derive unique and stable IRI strategies of data source updates, to enable efficient knowledge graph generation pipelines. In the future, we will extend our approach to handle deletions in data collections, and conduct an extensive performance evaluation.",
+            "datePublished": "2022-05-29",
+            "publisher": "ESWC 2022 - 3rd Knowledge Graph Construction Workshop",
+            "author": [
+                "https://dylanvanassche.be/#me",
+                "https://data.knows.idlab.ugent.be/person/minoo/#me",
+                "https://julianrojas.org/#me",
+                "https://pietercolpaert.be/#me"
+            ],
+            "authorList": [
+                "https://dylanvanassche.be/#me",
+                "https://data.knows.idlab.ugent.be/person/minoo/#me",
+                "https://julianrojas.org/#me",
+                "https://pietercolpaert.be/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "https://www.semantic-web-journal.net/content/publishing-planned-live-and-historical-public-transport-data-web-linked-connections-1",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Publishing planned, live and historical public transport data on the Web with the Linked Connections framework",
+            "abstract": "Publishing transport data on the Web for consumption by others poses several challenges for data publishers. In addition to planned schedules, access to live schedule updates (e.g. delays or cancellations) and historical data is fundamental to enable reliable applications and to support machine learning use cases. However publishing such dynamic data further increases the computational burden for data publishers, resulting in often unavailable historical data and live schedule updates for most public transport networks. In this paper we apply and extend the current Linked Connections approach for static data to also support cost-efficient live and historical public transport data publishing on the Web. Our contributions include (i) a reference specification and system architecture to support cost-efficient publishing of dynamic public transport schedules and historical data; (ii) empirical evaluations on route planning query performance based on data fragmentation size, publishing costs and a comparison with a traditional route planning engine such as OpenTripPlanner; (iii) an analysis of potential correlations of query performance with particular public transport network characteristics such as size, average degree, density, clustering coefficient and average connection duration. Results confirm that fragmentation size influences route planning query performance and converges on an optimal fragment size per network. Size (stops), density and connection duration also show correlation with route planning query performance. Our approach proves to be more cost-efficient and in some cases outperforms OpenTripPlanner when supporting the earliest arrival time route planning use case. Moreover, the cost of publishing live and historical schedules remains in the same order of magnitude for server-side resources compared to publishing planned schedules only. Yet, further optimizations are needed for larger networks (> 1000 stops) to be useful in practice. Additional dataset fragmentation strategies (e.g. geospatial) may be studied for designing more scalable and performant Web API s that adapt to particular use cases, not only limited to the public transport domain.",
+            "datePublished": "2022-07-29",
+            "publisher": "Semantic Web Journal",
+            "author": [
+                "https://julianrojas.org/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://julianrojas.org/#me",
+                "https://data.knows.idlab.ugent.be/person/harm/#me",
+                "https://pietercolpaert.be/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
         },
         {
             "@id": "https://data.verborgh.org/people/david_chaves",
@@ -250,7 +675,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "David Chaves Fraga"
+            "label": "David Chaves Fraga",
+            "name": "David Chaves Fraga"
         },
         {
             "@id": "https://pietercolpaert.be/#me",
@@ -258,7 +684,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Pieter Colpaert"
+            "label": "Pieter Colpaert",
+            "name": "Pieter Colpaert"
         },
         {
             "@id": "https://ruben.verborgh.org/profile/#me",
@@ -266,15 +693,17 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Ruben Verborgh"
+            "label": "Ruben Verborgh",
+            "name": "Ruben Verborgh"
         },
         {
-            "@id": "https://data.verborgh.org/people/erik_mannens",
+            "@id": "https://data.knows.idlab.ugent.be/person/erikmannens/#me",
             "@type": [
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Erik Mannens"
+            "label": "Erik Mannens",
+            "name": "Erik Mannens"
         },
         {
             "@id": "https://julianrojas.org/people/pieter-jan_vandenberghe",
@@ -282,7 +711,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Pieter-Jan Vandenberghe"
+            "label": "Pieter-Jan Vandenberghe",
+            "name": "Pieter-Jan Vandenberghe"
         },
         {
             "@id": "https://data.verborgh.org/people/oscar_corcho",
@@ -290,15 +720,17 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Oscar Corcho"
+            "label": "Oscar Corcho",
+            "name": "Oscar Corcho"
         },
         {
-            "@id": "https://data.verborgh.org/people/brecht_van_de_vyvere",
+            "@id": "https://w3id.org/people/brechtvdv/#me",
             "@type": [
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Brecht Van de Vyvere"
+            "label": "Brecht Van de Vyvere",
+            "name": "Brecht Van de Vyvere"
         },
         {
             "@id": "https://data.verborgh.org/people/arne_gevaert",
@@ -306,7 +738,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Arne Gevaert"
+            "label": "Arne Gevaert",
+            "name": "Arne Gevaert"
         },
         {
             "@id": "https://www.rubensworks.net/#me",
@@ -314,7 +747,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Ruben Taelman"
+            "label": "Ruben Taelman",
+            "name": "Ruben Taelman"
         },
         {
             "@id": "https://data.verborgh.org/people/gayane_sedrakyan",
@@ -322,7 +756,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Gayane Sedrakyan"
+            "label": "Gayane Sedrakyan",
+            "name": "Gayane Sedrakyan"
         },
         {
             "@id": "https://data.verborgh.org/people/miel_vander_sande",
@@ -330,7 +765,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Miel Vander Sande"
+            "label": "Miel Vander Sande",
+            "name": "Miel Vander Sande"
         },
         {
             "@id": "https://data.verborgh.org/people/bert_marcelis",
@@ -338,7 +774,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Bert Marcelis"
+            "label": "Bert Marcelis",
+            "name": "Bert Marcelis"
         },
         {
             "@id": "https://data.verborgh.org/people/eveline_vlassenroot",
@@ -346,7 +783,8 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Eveline Vlassenroot"
+            "label": "Eveline Vlassenroot",
+            "name": "Eveline Vlassenroot"
         },
         {
             "@id": "https://data.verborgh.org/people/mathias_van_compernolle",
@@ -354,7 +792,161 @@
                 "foaf:Person",
                 "schema:Person"
             ],
-            "label": "Mathias Van Compernolle"
+            "label": "Mathias Van Compernolle",
+            "name": "Mathias Van Compernolle"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/ben_abelshausen",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Ben Abelshausen",
+            "name": "Ben Abelshausen"
+        },
+        {
+            "@id": "https://data.knows.idlab.ugent.be/person/harm/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Harm Delva",
+            "name": "Harm Delva"
+        },
+        {
+            "@id": "https://dylanvanassche.be/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Dylan Van Assche",
+            "name": "Dylan Van Assche"
+        },
+        {
+            "@id": "https://julianrojas.org/people/pieter_morlion",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Pieter Morlion",
+            "name": "Pieter Morlion"
+        },
+        {
+            "@id": "https://julianrojas.org/people/han_tambuyzer",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Han Tambuyzer",
+            "name": "Han Tambuyzer"
+        },
+        {
+            "@id": "https://julianrojas.org/people/wout_baert",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Wout Baert",
+            "name": "Wout Baert"
+        },
+        {
+            "@id": "https://data.knows.idlab.ugent.be/person/rafbuyle/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Raf Buyle",
+            "name": "Raf Buyle"
+        },
+        {
+            "@id": "https://data.knows.idlab.ugent.be/person/dwightvanlancker/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Dwight Van Lancker",
+            "name": "Dwight Van Lancker"
+        },
+        {
+            "@id": "https://julianrojas.org/people/stefan_lefever",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Stefan Lefever",
+            "name": "Stefan Lefever"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/peter_mechant",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Peter Mechant",
+            "name": "Peter Mechant"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/marina_aguado",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Marina Aguado",
+            "name": "Marina Aguado"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/polymnia_vasilopoulou",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Polymnia Vasilopoulou",
+            "name": "Polymnia Vasilopoulou"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/ivo_velitchkov",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Ivo Velitchkov",
+            "name": "Ivo Velitchkov"
+        },
+        {
+            "@id": "https://pod.rubendedecker.be/profile/card#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Ruben Dedecker",
+            "name": "Ruben Dedecker"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/philippe_michiels",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Philippe Michiels",
+            "name": "Philippe Michiels"
+        },
+        {
+            "@id": "https://data.verborgh.org/people/annelies_de_craene",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Annelies De Craene",
+            "name": "Annelies De Craene"
+        },
+        {
+            "@id": "https://data.knows.idlab.ugent.be/person/minoo/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Sitt Min Oo",
+            "name": "Sitt Min Oo"
         }
     ]
 }
