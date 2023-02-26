@@ -4,18 +4,19 @@ const { QueryEngineComunica } = require("graphql-ld-comunica");
 module.exports = async () => {
     let context = {
         "@context": {
+            "jr": "https://julianrojas.org/ns#",
             "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
             "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
             "schema": "http://schema.org/",
             "type": "rdf:type",
             "first": "rdf:first",
             "rest": "rdf:rest",
-            "title": "rdfs:label",
-            "abstract": "rdfs:description",
+            "title": "schema:name",
+            "abstract": "schema:abstract",
             "datePublished": "schema:datePublished",
             "publisher": "schema:publisher",
-            "authored": { "@reverse": "schema:author" },
-            "author": "schema:author",
+            "authored": { "@reverse": "jr:authorList" },
+            "author": "jr:authorList",
             "name": "rdfs:label",
             "Publication": "http://schema.org/ScholarlyArticle",
             "Person": "http://xmlns.com/foaf/0.1/Person"
@@ -70,17 +71,23 @@ module.exports = async () => {
     // Get an index of authors
     let authorsMap = getIndex(authors.data[0].all);
 
-    // Set the correspondent list of authors to every paper
+    // Set the correspondent list of authors and publication year to every paper
     for (let i = 0; i < authors.data[0].firstAuthor.length; i++) {
         let firstAuthor = authors.data[0].firstAuthor[i];
         let paper = papersMap.get(firstAuthor.authored);
         paper['authors'] = getOrderedAuthors(firstAuthor, authorsMap);
+        paper['datePublished'] = new Date(paper['datePublished']);
         data.push(paper);
     }
 
     // Sort the papers from the newest to the oldest
     data.sort(function (b, a) {
-        return parseInt(a.datePublished) - parseInt(b.datePublished);
+        return a.datePublished - b.datePublished;
+    });
+
+    // Keep only the publication year
+    data.forEach(p => {
+        p['datePublished'] = p['datePublished'].getUTCFullYear();
     });
 
     return data;
