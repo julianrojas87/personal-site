@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
         "html",
         "jpg",
         "png",
+        "webp",
         "js",
         "liquid",
         "json",

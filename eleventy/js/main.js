@@ -196,7 +196,7 @@ function removeExtraCommas() {
 }
 
 function collapseAbstracts() {
-	let abstracts = $('.timeline .full-abstract .abstract-text');
+	let abstracts = $('.full-abstract .abstract-text');
 	for (let i in abstracts) {
 		if (abstracts[i].innerText) {
 			let collapsed = $(abstracts[i]).closest('.full-abstract').siblings('.collapsed-abstract').find('.abstract-text');

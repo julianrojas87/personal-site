@@ -9734,6 +9734,7 @@ h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
 
 .blog-entry .img.img-2 {
 	height: 330px;
+	background-size: contain;
 }
 
 .blog-entry .text {
@@ -10684,6 +10685,20 @@ textarea.form-control {
 	.hero-wrap .text .subheading {
 		font-size: 18px;
 	}
+}
+
+.label {
+    display: inline;
+    padding: 0.2em 0.6em 0.3em;
+    font-size: 85%;
+    font-weight: 700;
+    line-height: 1;
+	color: #fff;
+    background-color: #f05d23;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.25em;
 }
 
 @media (max-width: 768px) {

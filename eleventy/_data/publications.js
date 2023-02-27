@@ -2,7 +2,7 @@ const { Client } = require("graphql-ld");
 const { QueryEngineComunica } = require("graphql-ld-comunica");
 
 module.exports = async () => {
-    let context = {
+    const context = {
         "@context": {
             "jr": "https://julianrojas.org/ns#",
             "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -29,7 +29,7 @@ module.exports = async () => {
         ],
     };
 
-    let client = new Client({ context, queryEngine: new QueryEngineComunica(comunicaConfig) });
+    const client = new Client({ context, queryEngine: new QueryEngineComunica(comunicaConfig) });
 
     // Query to get all the papers and their info.
     const papersQuery = `
