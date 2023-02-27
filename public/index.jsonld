@@ -13,6 +13,7 @@
         "Document": "foaf:Document",
         "OnlineAccount": "foaf:OnlineAccount",
         "ScholarlyArticle": "schema:ScholarlyArticle",
+        "Project": "schema:Project",
         "label": "rdfs:label",
         "description": "rdfs:description",
         "name": "foaf:name",
@@ -31,6 +32,7 @@
         "homeLocation": "schema:homeLocation",
         "publisher": "schema:publisher",
         "abstract": "schema:abstract",
+        "url": "schema:url",
         "vcTitle": "vcard:title",
         "contributor": {
             "@id": "schema:contributor",
@@ -60,6 +62,18 @@
             "@id": "jr:authorList",
             "@type": "@id",
             "@container": "@list"
+        },
+        "funder": {
+            "@id": "schema:funder",
+            "@type": "@id"
+        },
+        "startDate": {
+            "@id": "schema:startDate",
+            "@type": "xsd:date"
+        },
+        "endDate": {
+            "@id": "schema:endDate",
+            "@type": "xsd:date"
         },
         "sameAs": {
             "@id": "schema:sameAs",
@@ -670,6 +684,196 @@
             "contributor": "knows:"
         },
         {
+            "@id": "https://julianrojas.org/projects/oasis",
+            "@type": "Project",
+            "schema:name": "OASIS",
+            "url": "https://github.com/cef-oasis/",
+            "schema:description": "Together, Ghent and the region of Madrid have initiated and innovative action that will increase the accessibility of public services and public transport. To do this, they will collaborate to publish linked open data. Both cities are experienced publishers of open data, and together they will prove that new technologies (such as the Semantic Web) can lead to economies of scale, such as the creation of cross-country applications. The project called OASIS (Open Applications for Semantically Interoperable Services) has received funding from the European Commission (INEA) and is a partnership between the Universities of Ghent and Madrid (imec and UPM), the city of Ghent, the Consorcio Regional de Transported de Madrid, supported by the Flemish ICT organization (V-ICT-OR) and coordinated by Open Knowledge Belgium.",
+            "startDate": "2016-10-01",
+            "endDate": "2018-09-30",
+            "schema:image": "https://julianrojas.org/images/oasis.png",
+            "funder": [ "https://ec.europa.eu/inea/en/welcome-to-innovation-networks-executive-agency" ],
+            "schema:keywords": [
+                "Linked Data",
+                "Transport",
+                "Data Models"
+            ]
+        },
+        {
+            "@id": "https://julianrojas.org/projects/openplaner",
+            "@type": "Project",
+            "schema:name": "Open Planner",
+            "url": "https://openplanner.team/",
+            "schema:description": "Countless projects have tried to create a perfect intermodal route planning experience, and all of them have been investing over and over again in integrating the same data. When the funding from these projects disappears, also the data integration disappeared. The Open Planner Team wants to empower anyone to build any kind of route planner, without having to invest in data integration. Your route planner should work out of the box. Therefore, we are first and foremost working on the Open Data itself, by helping data owners publish their data. By building open source tools that can consume these open data sources automatically, we hope to build a level playing field for Mobility as a Service players.",
+            "startDate": "2018-07-01",
+            "endDate": "2019-06-30",
+            "schema:image": "https://julianrojas.org/images/openplanner.svg",
+            "funder": [ "https://www.smartmobilitybelgium.be/" ],
+            "schema:keywords": [
+                "Linked Data",
+                "Transport",
+                "Route Planning"
+            ],
+            "sameAs": "https://data.knows.idlab.ugent.be/project/openplanner"
+        },
+        {
+            "@id": "https://julianrojas.org/projects/hobbit",
+            "@type": "Project",
+            "schema:name": "HOBBIT",
+            "url": "https://project-hobbit.eu/",
+            "schema:description": "HOBBIT aims at abolishing the barriers in the adoption and deployment of Big Linked Data by European companies, by means of open benchmarking reports that allow them to assess the fitness of existing solutions for their purposes. These benchmarks are based on data that reflects reality and measures industry-relevant Key Performance Indicators (KPIs) with comparable results using standardized hardware.",
+            "startDate": "2015-12-01",
+            "endDate": "2018-12-01",
+            "schema:image": "https://julianrojas.org/images/hobbit.png",
+            "funder": [ "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en" ],
+            "schema:keywords": [
+                "Linked Data",
+                "Benchmarking",
+                "RDF Streams"
+            ]
+        },
+        {
+            "@id": "https://julianrojas.org/projects/velopark",
+            "@type": "Project",
+            "schema:name": "Velopark",
+            "url": "https://www.velopark.be/en/about",
+            "schema:description": "Velopark is a digital platform that makes information about bike parks in Belgium accessible to all. All useful user information is gathered at one central location. This makes bicycle parking data immediately accessible as open data for websites (public transport, trains, towns and municipalities), apps and online applications (digital maps, journey planners, etc.). The information is always up to date, any time, anywhere. The Velopark project is an initiative of Fietsberaad Vlaanderen, in partnership with imec, Nazka and MORE LION. The project is supported by the federal Belgian government through the Smart Mobility Belgium fund.",
+            "startDate": "2018-12-08",
+            "endDate": "2021-03-31",
+            "schema:image": "https://julianrojas.org/images/velopark.png",
+            "funder": [ "https://www.smartmobilitybelgium.be/" ],
+            "schema:keywords": [
+                "Linked Data",
+                "Mobility",
+                "Data Models"
+            ],
+            "sameAs": "https://data.knows.idlab.ugent.be/project/velopark"
+        },
+        {
+            "@id": "https://julianrojas.org/projects/bas_x",
+            "@type": "Project",
+            "schema:name": "BAS-X",
+            "url": "https://www.victoris.be/projects/bas-x/",
+            "schema:description": "BAS-X aims to allow as many people (45+) as possible to spend a basic number of active hours per week outdoors through the 3 most popular activities: running, cycling and walking. It offers you a suitable route at the starting point of your choice. Whether you’re a cyclist, walker or runner, whether you’re in excellent shape or getting started at improving your physical condition… at any location. There’s no need to install an app or buy an extra device (GPS, wearable…). BAS-X will also “nudge” you in order to convince you to go outside and follow a route on a regular basis.",
+            "startDate": "2020-01-01",
+            "endDate": "2021-01-01",
+            "schema:image": "https://julianrojas.org/images/basx.webp",
+            "funder": [ "https://www.victoris.be/" ],
+            "schema:keywords": [
+                "Route Planning",
+                "Geocoding",
+                "TREE"
+            ]
+        },
+        {
+            "@id": "https://julianrojas.org/projects/smartwaterway",
+            "@type": "Project",
+            "schema:name": "SmartWaterWay",
+            "url": "https://www.imec-int.com/en/research-portfolio/smartwaterway",
+            "schema:description": "SmartWaterWay will offer a cost-efficient manner to automate small vessels used for urban logistics in cities with a dense network of small waterways, by distributing the intelligence between low-cost onboard sensors and onshore infrastructure. To drive the shift from roadway to waterway-based logistics, the SmartWaterWay project will make autonomous pallet shuttle barges cost effective in urban settings by combining low-cost onboard sensors with onshore sensors equipped at bridges, locks and bays.",
+            "startDate": "2019-12-01",
+            "endDate": "2022-02-28",
+            "schema:image": "https://julianrojas.org/images/smartwaterway.webp",
+            "funder": [ "https://www.imec-int.com/en/icon" ],
+            "schema:keywords": [
+                "Route Planning",
+                "Water Ways",
+                "GIS"
+            ],
+            "sameAs": "https://data.knows.idlab.ugent.be/project/smartWaterWay"
+        },
+        {
+            "@id": "https://julianrojas.org/projects/era-kg",
+            "@type": "Project",
+            "schema:name": "ERA-KG",
+            "url": "https://www.era.europa.eu/library/era-knowledge-hub_en",
+            "schema:description": "Bilateral collaboration with the European Agency for Railways (ERA) to create and evolve a semantic interoperability layer that integrates the different base registries maintained by the agency and support innovative services such as the Route Compatibility Check and Infrastructure Change Alert use cases.",
+            "startDate": "2020-10-02",
+            "schema:image": "https://julianrojas.org/images/era-kg.png",
+            "funder": [ "https://www.era.europa.eu/" ],
+            "schema:keywords": [
+                "Route Planning",
+                "Railways",
+                "Knowledge Graph"
+            ]
+        },
+        {
+            "@id": "https://julianrojas.org/projects/vsds",
+            "@type": "Project",
+            "schema:name": "VSDS",
+            "url": "https://www.vlaanderen.be/digitaal-vlaanderen/onze-oplossingen/vlaamse-smart-data-space",
+            "schema:description": "The Flemish Smart Data Space ensures the sustainable publication and consultation of sensor data and their context information. As a decentralized solution, the Flemish Smart Data Space uses a joint ecosystem with clear rules, allowing us to share, publish and reuse data in a smart way.",
+            "startDate": "2021-08-27",
+            "schema:image": "https://julianrojas.org/images/vsds.png",
+            "funder": [ "https://www.vlaanderen.be/digitaal-vlaanderen" ],
+            "schema:keywords": [
+                "LDES",
+                "Data Space",
+                "Knowledge Graph"
+            ]
+        },
+        {
+            "@id": "https://julianrojas.org/projects/sytadel",
+            "@type": "Project",
+            "schema:name": "SYTADEL",
+            "url": "https://www.imec-int.com/en/sytadel",
+            "schema:description": "Companies are certainly not immune to the increasing demand for sustainable logistics, and yet they almost automatically turn to road transportation when planning their supply chain. Trains and inland waterways are disregarded, because they require much more organization - and besides: there's fear of the unknown. Fortunately, technology that will allow companies to plan their transportation more consciously and sustainably – without compromising on efficiency – is gradually becoming more available. The trick is to break through the silos of various transportation systems and combine their data into one high-quality planning system. That is the aim of SYTADEL.",
+            "startDate": "2022-04-01",
+            "schema:image": "https://julianrojas.org/images/sytadel.webp",
+            "funder": [ "https://moonshotflanders.be/csbo-projects/" ],
+            "schema:keywords": [
+                "LDES",
+                "Data Space",
+                "Logistics"
+            ],
+            "sameAs": "https://data.knows.idlab.ugent.be/project/sytadel"
+        },
+        {
+            "@id": "https://julianrojas.org/projects/greenmov",
+            "@type": "Project",
+            "schema:name": "GreenMov",
+            "url": "https://green-mov.eu/",
+            "schema:description": "We're not nearly exploiting all the opportunities open data have to offer. For example, wouldn't it be convenient if you could check before your departure if there will be a shared bike available at your last stop? This kind of application is accomplished by complex models that combine several sources of data. Like the up-to-date train traffic information with a prediction of the number of shared bikes at the station – based on realtime and historic data, and personal preferences. A significant obstacle soon pops up: individual data sources are often developed from a specific viewpoint, which means they can't be used for multiple applications and processes. We need to better describe these data sources and make them more accessible. Only then can we find a user-friendly way to integrate them into different applications. Within the GreenMov project, we realize this through concrete examples. OSLO provides a semantic description of the exact meaning of a dataset. We demonstrate that the OSLO schematics are compatible with others. And Linked Data Event Streams (LDES) and NGSI-LD are two variants of Linked Data that GreenMov brings together.",
+            "startDate": "2021-09-09",
+            "schema:image": "https://julianrojas.org/images/greenmov.png",
+            "funder": [ "https://digital-strategy.ec.europa.eu/en/activities/cef-digital" ],
+            "schema:keywords": [
+                "LDES",
+                "Mobility",
+                "Data Models"
+            ]
+        },
+        {
+            "@id": "https://julianrojas.org/projects/maregraph",
+            "@type": "Project",
+            "schema:name": "MareGraph",
+            "url": "https://green-mov.eu/",
+            "schema:description": "MareGraph will build a data architecture for cost-efficient, flexible and sustainable data sharing for a Marine Knowledge Graph. In this project we collaborate with the Flemish Marine Institute (VLIZ), Digital Flanders and the Italian National Research Council (CNR).",
+            "startDate": "2023-01-23",
+            "schema:image": "https://julianrojas.org/images/maregraph.png",
+            "funder": [ "https://digital-strategy.ec.europa.eu/en/activities/digital-programme" ],
+            "schema:keywords": [
+                "LDES",
+                "Marine Data",
+                "Data Models"
+            ]
+        },
+        {
+            "@id": "https://julianrojas.org/projects/semic",
+            "@type": "Project",
+            "schema:name": "SEMIC",
+            "url": "https://joinup.ec.europa.eu/collection/semic-support-centre/welcome",
+            "schema:description": "SEMIC sets up pilots to showcase the value of new approaches and ecosystems (e.g. Linked Data Event Streams, SOLID and Wikibase/Wikidata), which can be leveraged across public administrations to scale up their interoperability maturity (e.g. catalogue of services, base registries). Pilots usually involve participants from several Member States and sector-specific DGs co-creating solutions with SEMIC's support.",
+            "startDate": "2021-01-01",
+            "schema:image": "https://julianrojas.org/images/semic.png",
+            "funder": [ "https://joinup.ec.europa.eu/interoperable-europe" ],
+            "schema:keywords": [
+                "LDES",
+                "Data Space",
+                "Data Models"
+            ]
+        },
+        {
             "@id": "https://data.verborgh.org/people/david_chaves",
             "@type": [
                 "foaf:Person",
@@ -947,6 +1151,56 @@
             ],
             "label": "Sitt Min Oo",
             "name": "Sitt Min Oo"
+        },
+        {
+            "@id": "https://ec.europa.eu/inea/en/welcome-to-innovation-networks-executive-agency",
+            "@type": "schema:Organization",
+            "schema:name": "INEA"
+        },
+        {
+            "@id": "https://www.smartmobilitybelgium.be/",
+            "@type": "schema:Organization",
+            "schema:name": "Smart Mobility Belgium"
+        },
+        {
+            "@id": "https://digital-strategy.ec.europa.eu/en/activities/cef-digital",
+            "@type": "schema:Organization",
+            "schema:name": "Connecting Europe Facility"
+        },
+        {
+            "@id": "https://research-and-innovation.ec.europa.eu/funding/funding-opportunities/funding-programmes-and-open-calls/horizon-2020_en",
+            "@type": "schema:Organization",
+            "schema:name": "HORIZON 2020"
+        },
+        {
+            "@id": "https://www.victoris.be/",
+            "@type": "schema:Organization",
+            "schema:name": "Victoris"
+        },
+        {
+            "@id": "https://www.imec-int.com/en/icon",
+            "@type": "schema:Organization",
+            "schema:name": "imec.icon"
+        },
+        {
+            "@id": "https://www.era.europa.eu/",
+            "@type": "schema:Organization",
+            "schema:name": "European Agency for Railways"
+        },
+        {
+            "@id": "https://moonshotflanders.be/csbo-projects/",
+            "@type": "schema:Organization",
+            "schema:name": "cSBO"
+        },
+        {
+            "@id": "https://digital-strategy.ec.europa.eu/en/activities/digital-programme",
+            "@type": "schema:Organization",
+            "schema:name": "Digital Europe Programme"
+        },
+        {
+            "@id": "https://joinup.ec.europa.eu/interoperable-europe",
+            "@type": "schema:Organization",
+            "schema:name": "Interoperable Europe"
         }
     ]
 }
