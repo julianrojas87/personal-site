@@ -898,6 +898,7 @@
             "url": "https://green-mov.eu/",
             "schema:description": "We're not nearly exploiting all the opportunities open data have to offer. For example, wouldn't it be convenient if you could check before your departure if there will be a shared bike available at your last stop? This kind of application is accomplished by complex models that combine several sources of data. Like the up-to-date train traffic information with a prediction of the number of shared bikes at the station – based on realtime and historic data, and personal preferences. A significant obstacle soon pops up: individual data sources are often developed from a specific viewpoint, which means they can't be used for multiple applications and processes. We need to better describe these data sources and make them more accessible. Only then can we find a user-friendly way to integrate them into different applications. Within the GreenMov project, we realize this through concrete examples. OSLO provides a semantic description of the exact meaning of a dataset. We demonstrate that the OSLO schematics are compatible with others. And Linked Data Event Streams (LDES) and NGSI-LD are two variants of Linked Data that GreenMov brings together.",
             "startDate": "2021-09-09",
+            "endDate": "2023-09-30",
             "schema:image": "https://julianrojas.org/images/greenmov.png",
             "funder": [ "https://digital-strategy.ec.europa.eu/en/activities/cef-digital" ],
             "schema:keywords": [
