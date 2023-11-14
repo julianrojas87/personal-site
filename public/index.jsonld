@@ -118,7 +118,7 @@
                     "@value": "Rojas Meléndez"
                 }
             ],
-            "description": "I am a data interoperability and Semantic Web researcher at IDLab. A Colombian living in Belgium.",
+            "description": "I am a data interoperability and Semantic Web researcher at IDLab (which makes me part of both IMEC and Ghent University). My research has focused mainly on the design of cost-efficient system architectures for scalable and interoperable data exchange at Web scale. I've had the opportunity of applying the results of my research mainly on the transportation domain, including public transport, logistics and infrastructure. However I've always aimed at designing generic solutions that can be also applied and facilitate data exchange in various domains",
             "phone": "+3293314959",
             "email": "mailto:julianandres.rojasmelendez@ugent.be",
             "account": [
@@ -684,6 +684,69 @@
             "contributor": "knows:"
         },
         {
+            "@id": "https://hozo.jp/ISWC2023_PD-Industry-proc/ISWC2023_paper_399.pdf",
+            "@type": "ScholarlyArticle",
+            "schema:name": "Bringing IDE Support to JSON-LD with the Language Server Protocol",
+            "abstract": "JSON-LD is a popular data format used to describe and share semantic data on the web. However, creating and editing JSON-LD documents can be a challenging task, especially when dealing with complex contexts that include many properties. The existing JSON editing functionality may not suffice for developers, and a JSON-LD editor could greatly enhance their experience. In this paper, we introduce a JSON-LD Language Server based on the Language Server Protocol (LSP) that empowers text editors compatible with the LSP (e.g., Visual Studio Code and NeoVim) with IDE functionality, including autocompletion suggestions based on the defined context, semantic highlighting and renaming identifiers inside the document. We believe that a JSON-LD LSP will enhance developer ergonomics and promote its adoption. Moreover, we see high potential for additional features that can be added such as hovering, go-to-definition and code actions like flattening or structuring of JSON-LD documents.",
+            "datePublished": "2023-11-08",
+            "publisher": "ISWC 2023",
+            "author": [
+                "https://data.knows.idlab.ugent.be/person/ajuvercr/#me",
+                "https://julianrojas.org/#me",
+                "https://pietercolpaert.be/#me"
+            ],
+            "authorList": [
+                "https://data.knows.idlab.ugent.be/person/ajuvercr/#me",
+                "https://julianrojas.org/#me",
+                "https://pietercolpaert.be/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "https://hozo.jp/ISWC2023_PD-Industry-proc/ISWC2023_paper_403.pdf",
+            "@type": "ScholarlyArticle",
+            "schema:name": "YARRRML + LDES: Simultaneously Lowering Complexity from Knowledge Graph Generation and Publication",
+            "abstract": "Linked Data Event Streams (LDES) is an advanced Knowledge Graph (KG) publication specification aimed at continuous data source replication and synchronization with benefits such as data entities versioning and history retention while providing a self-descriptive API. However, building an LDES requires a high level of expertise in the Semantic Web ecosystem. In this demo paper, we show how we lower the complexity and need for expertise when using a more advanced KG publication method such as LDES by providing an extension point to YARRRML, a human-friendly way to configure KG generation via RML. Integrated in Matey, an online YARRRML editor, we show how little effort (adding five characters to the YARRRML syntax in the simplest case) allows (re)generating multiple versions of a KG as an Event Stream. As such, this extension provides an easy-to-use starting point for anyone wanting to create an LDES from non-semantic data.",
+            "datePublished": "2023-11-08",
+            "publisher": "ISWC 2023",
+            "author": [
+                "https://data.knows.idlab.ugent.be/person/geraldh/#me",
+                "https://ben.de-meester.org/#me",
+                "https://julianrojas.org/#me",
+                "https://dylanvanassche.be/#me",
+                "https://pietercolpaert.be/#me"
+            ],
+            "authorList": [
+                "https://data.knows.idlab.ugent.be/person/geraldh/#me",
+                "https://ben.de-meester.org/#me",
+                "https://julianrojas.org/#me",
+                "https://dylanvanassche.be/#me",
+                "https://pietercolpaert.be/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
+            "@id": "https://hozo.jp/ISWC2023_PD-Industry-proc/ISWC2023_paper_406.pdf",
+            "@type": "ScholarlyArticle",
+            "schema:name": "A Rule-Based Software Agent on Top of Personal Data Stores",
+            "abstract": "As a response to centralised platforms hoarding user data on the web, Personal Data Stores (PDSs) are becoming more prominent. In this emerging space of decentralized PDS platforms, we see a growing need for automated agents to take over tasks that are normally handled by those data platforms. These intelligent agents already have their place in our daily lives, however, they are currently largely missing from the domain of Personal Data Stores. To address this need, we created a demonstrator software web agent that acts on the real world and personal data via condition–action rules. We applied this demonstrator to a smart home environment use case, where smart home appliances can be actuated and monitored via a personal data store. The generic architecture used by the implementation leads to maximal re-use of the agent, enabling multi-agent systems and researching more complex use cases.",
+            "datePublished": "2023-11-08",
+            "publisher": "ISWC 2023",
+            "author": [
+                "https://pod.woutslabbinck.com/profile/card#me",
+                "https://pod.rubendedecker.be/profile/card#me",
+                "https://julianrojas.org/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "authorList": [
+                "https://pod.woutslabbinck.com/profile/card#me",
+                "https://pod.rubendedecker.be/profile/card#me",
+                "https://julianrojas.org/#me",
+                "https://ruben.verborgh.org/profile/#me"
+            ],
+            "contributor": "knows:"
+        },
+        {
             "@id": "https://julianrojas.org/projects/oasis",
             "@type": "Project",
             "schema:name": "OASIS",
@@ -874,6 +937,21 @@
             ]
         },
         {
+            "@id": "https://julianrojas.org/projects/serendipity-engine",
+            "@type": "Project",
+            "schema:name": "Serendipity Engine",
+            "url": "https://www.serendipityengine.be/",
+            "schema:description": "We increasingly rely on algorithmically generated recommendations to navigate in both online and offline contexts: listening to music on streaming platforms, reading news online, or following recommendations about activities and events in your favorite city. These recommender systems help us dealing with the abundance of available information, but at the same time raise questions about their impact on individual citizens and society. Many advocate for designs for serendipity in recommenders, but what does this mean in practice? While serendipity is generally understood as a beneficial design principle ought to deliver societal value, putting it into practice still presents major challenges. The Serendipity Engine project sets out to address these challenges and support societal stakeholders in designing recommender systems to foster serendipity in public contexts.",
+            "startDate": "2022-10-01",
+            "schema:image": "https://static.wixstatic.com/media/11062b_4e00b1cf6d0c47e39213d3456b182d2c~mv2.jpg/v1/fill/w_378,h_283,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Graphic%20Shapes%20.jpg",
+            "funder": [ "https://www.fwo.be/en/fellowships-funding/research-projects/sbo-projects/" ],
+            "schema:keywords": [
+                "Serendipity",
+                "Recommender Systems",
+                "Web Querying"
+            ]
+        },
+        {
             "@id": "https://data.verborgh.org/people/david_chaves",
             "@type": [
                 "foaf:Person",
@@ -1018,6 +1096,15 @@
             "name": "Harm Delva"
         },
         {
+            "@id": "https://data.knows.idlab.ugent.be/person/ajuvercr/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Arthur Vercruysse",
+            "name": "Arthur Vercruysse"
+        },
+        {
             "@id": "https://dylanvanassche.be/#me",
             "@type": [
                 "foaf:Person",
@@ -1153,6 +1240,33 @@
             "name": "Sitt Min Oo"
         },
         {
+            "@id": "https://data.knows.idlab.ugent.be/person/geraldh/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Gerald Haesendonck",
+            "name": "Gerald Haesendonck"
+        },
+        {
+            "@id": "https://ben.de-meester.org/#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Ben De Meester",
+            "name": "Ben De Meester"
+        },
+        {
+            "@id": "https://pod.woutslabbinck.com/profile/card#me",
+            "@type": [
+                "foaf:Person",
+                "schema:Person"
+            ],
+            "label": "Wout Slabbinck",
+            "name": "Wout Slabbinck"
+        },
+        {
             "@id": "https://ec.europa.eu/inea/en/welcome-to-innovation-networks-executive-agency",
             "@type": "schema:Organization",
             "schema:name": "INEA"
@@ -1201,6 +1315,11 @@
             "@id": "https://joinup.ec.europa.eu/interoperable-europe",
             "@type": "schema:Organization",
             "schema:name": "Interoperable Europe"
+        },
+        {
+            "@id": "https://www.fwo.be/en/fellowships-funding/research-projects/sbo-projects/",
+            "@type": "schema:Organization",
+            "schema:name": "SBO"
         }
     ]
 }

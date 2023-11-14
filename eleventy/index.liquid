@@ -68,10 +68,19 @@
             <div class="desc">
               <h2 class="subheading">Hello I'm</h2>
               <h1 class="mb-4">{{ foaf.name }}</h1>
-              <p class="mb-4">I'm a data interoperability and Semantic Web researcher at <a
-                  href="http://idlab.technology/" target="_blank">IDLab</a>.</p>
               <p class="mb-4">A Colombian <img class="flag" src="images/co.png"> living in Belgium <img class="flag"
                   src="images/be.png">.</p>
+              <p class="mb-4">I'm a data interoperability and Semantic Web researcher at <a
+                  href="http://idlab.technology/" target="_blank">IDLab</a>
+                  (which makes me part of both <a href="https://www.imec-int.com/en" target="_blank">IMEC</a> 
+                  and <a href="https://www.ugent.be/en" target="_blank">Ghent University</a>).
+                  My research has focused mainly on the design of cost-efficient system architectures for
+                  scalable and interoperable data exchange at Web scale.
+                  I've had the opportunity of applying the results of my research 
+                  mainly on the transportation domain, including public transport, logistics and infrastructure.
+                  However I've always aimed at desgining generic solutions that can be also applied
+                  and facilitate data exchange in various domains. 
+              </p>
               <h2 class="subheading"><a href="mailto:{{ foaf.email }}">{{ foaf.email }}</a></h2>
               <h2 class="subheading"><a href="tel:{{ foaf.phone }}">{{ foaf.phone }}</a></h2>
               <ul class="ftco-social mt-3">
@@ -102,7 +111,7 @@
               <li>
 							  <h2>{{ pub.datePublished }}</h2>
                 <h3><a href="{{ pub.id }}" target="_blank">{{ pub.title }}</a></h3>
-                <h5>{% for auth in pub.authors %}<a class="author" href="{{ auth.id }}" target="_blank"><span>{{ auth.name }}</span></a>, {% endfor %}
+                <h5>{% for auth in pub.authors %}<a class="author" href="{{ auth.id }}" target="_blank">{% if auth.id == "https://julianrojas.org/#me" %} <strong>{{ auth.name }}</strong> {% else %} <span>{{ auth.name }}</span> {% endif %}</a>, {% endfor %}
                 </h5>
                 <h4>{{ pub.publisher }}</h4>
                 <p class="full-abstract">
