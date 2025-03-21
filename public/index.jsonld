@@ -161,8 +161,8 @@
                 "schema:name": "Leuven",
                 "sameAs": "gn:2792482"
             },
-            "vcTitle": "PhD. Researcher",
-            "title": "MSc.",
+            "vcTitle": "Postdoctoral Researcher",
+            "title": "PhD.",
             "img": "https://julianrojas.org/resources/img/me.jpg",
             "key": {
                 "@type": "RSAPublicKey",
